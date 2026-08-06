@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<title>Max Sanna Products and Services</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+	<style>
+		:root {
+			--bg: #e9f8ee;
+			--paper: #f4fff7;
+			--ink: #1f3b2a;
+			--muted: #2f6b46;
+			--accent-blue: #5fa979;
+			--accent-yellow: #d8f1df;
+			--accent-navy: #e9f8ee;
+			--line: #b9dfc7;
+			--card-shadow: 0 14px 32px rgba(43, 94, 63, 0.2);
+			--radius-lg: 20px;
+			--radius-md: 14px;
+			--max-width: 1240px;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: "Manrope", "Segoe UI", sans-serif;
+			color: var(--ink);
+			background:
+				radial-gradient(circle at 15% -5%, #d8f3df 0%, transparent 34%),
+				radial-gradient(circle at 90% 0%, #ccefd7 0%, transparent 30%),
+				linear-gradient(160deg, #e9f8ee 0%, #e2f5e9 45%, #f4fff7 100%);
+			line-height: 1.6;
+		}
+
+		.bg-shape {
+			position: fixed;
+			z-index: -1;
+			border-radius: 28px;
+			opacity: 0.3;
+			transform: rotate(16deg);
+			animation: drift 14s ease-in-out infinite;
+		}
+
+		.shape-a {
+			width: 190px;
+			height: 140px;
+			background: #8fcea5;
+			top: 12vh;
+			left: -40px;
+		}
+
+		.shape-b {
+			width: 240px;
+			height: 120px;
+			background: #73ba8c;
+			top: 52vh;
+			right: -70px;
+			animation-delay: -5s;
+		}
+
+		.shape-c {
+			width: 120px;
+			height: 120px;
+			background: #dff4e6;
+			bottom: 8vh;
+			left: 8vw;
+			animation-delay: -8s;
+		}
+
+		.shape-d {
+			width: 110px;
+			height: 110px;
+			background: #67af82;
+			top: 26vh;
+			right: 16vw;
+			animation-delay: -2.5s;
+		}
+
+		.shape-e {
+			width: 150px;
+			height: 150px;
+			background: #94d3aa;
+			bottom: 24vh;
+			left: 30vw;
+			animation-delay: -6.5s;
+		}
+
+		.shape-f {
+			width: 90px;
+			height: 90px;
+			background: #5fa979;
+			top: 68vh;
+			left: 64vw;
+			animation-delay: -10s;
+		}
+
+		@keyframes drift {
+			0%,
+			100% {
+				transform: translateY(0) rotate(16deg);
+			}
+			50% {
+				transform: translateY(-10px) rotate(19deg);
+			}
+		}
+
+		.wrap {
+			max-width: var(--max-width);
+			margin: 0 auto;
+			padding: 18px;
+		}
+
+		header.hero {
+			background: linear-gradient(130deg, #e2f6e9 0%, #d3efdd 100%);
+			color: #1f3b2a;
+			border: 4px solid #5fa979;
+			border-radius: var(--radius-lg);
+			box-shadow: var(--card-shadow);
+			overflow: hidden;
+			position: relative;
+			margin-top: 10px;
+			animation: revealUp 0.8s ease-out;
+		}
+
+		header.hero::before {
+			content: "";
+			position: absolute;
+			inset: auto auto -40px -40px;
+			width: 260px;
+			height: 260px;
+			background: radial-gradient(circle, rgba(95, 169, 121, 0.26), rgba(95, 169, 121, 0));
+			pointer-events: none;
+		}
+
+		.hero-grid {
+			display: grid;
+			grid-template-columns: 1.2fr 1fr;
+			gap: 22px;
+			padding: 34px;
+		}
+
+		.app-title {
+			font-family: "Bebas Neue", sans-serif;
+			letter-spacing: 1.5px;
+			font-size: clamp(2.5rem, 6vw, 4.6rem);
+			margin: 0;
+			line-height: 0.95;
+		}
+
+		.hero p {
+			margin: 14px 0 0;
+			max-width: 62ch;
+			color: rgba(31, 59, 42, 0.92);
+			font-size: 1.04rem;
+		}
+
+		.pill-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-top: 18px;
+		}
+
+		.pill {
+			background: rgba(95, 169, 121, 0.13);
+			border: 1px solid rgba(95, 169, 121, 0.45);
+			color: #1f3b2a;
+			border-radius: 999px;
+			padding: 6px 12px;
+			font-size: 0.85rem;
+			font-weight: 700;
+			letter-spacing: 0.3px;
+		}
+
+		.hero-stats {
+			background: rgba(255, 255, 255, 0.52);
+			border: 1px solid rgba(95, 169, 121, 0.35);
+			border-radius: var(--radius-md);
+			padding: 14px;
+			align-self: start;
+			backdrop-filter: blur(4px);
+		}
+
+		.hero-stats h2 {
+			margin: 0 0 8px;
+			font-family: "Bebas Neue", sans-serif;
+			font-size: 1.6rem;
+			letter-spacing: 0.9px;
+		}
+
+		.hero-stats ul {
+			margin: 0;
+			padding-left: 18px;
+		}
+
+		.hero-stats li {
+			margin: 4px 0;
+		}
+
+		nav.main-nav {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			margin-top: 28px;
+			justify-content: center;
+		}
+
+		nav.main-nav a {
+			display: inline-block;
+			padding: 10px 20px;
+			border-radius: 999px;
+			background: #edf9f1;
+			border: 2px solid #73ba8c;
+			color: #2f6b46;
+			font-family: "Manrope", sans-serif;
+			font-weight: 700;
+			font-size: 0.92rem;
+			letter-spacing: 0.3px;
+			text-decoration: none;
+			transition: background 0.2s, color 0.2s, border-color 0.2s;
+			white-space: nowrap;
+		}
+
+		nav.main-nav a:hover {
+			background: #5fa979;
+			color: #f7fff9;
+			border-color: #5fa979;
+		}
+
+		section {
+			margin-top: 28px;
+			background: var(--paper);
+			border: 2px solid var(--line);
+			border-radius: var(--radius-lg);
+			box-shadow: var(--card-shadow);
+			padding: 24px;
+			animation: revealUp 0.8s ease both;
+			color: var(--ink);
+		}
+
+		section:nth-of-type(1) { animation-delay: 0.05s; }
+		section:nth-of-type(2) { animation-delay: 0.1s; }
+		section:nth-of-type(3) { animation-delay: 0.15s; }
+		section:nth-of-type(4) { animation-delay: 0.2s; }
+		section:nth-of-type(5) { animation-delay: 0.25s; }
+		section:nth-of-type(6) { animation-delay: 0.3s; }
+		section:nth-of-type(7) { animation-delay: 0.35s; }
+		section:nth-of-type(8) { animation-delay: 0.4s; }
+
+		@keyframes revealUp {
+			from {
+				opacity: 0;
+				transform: translateY(16px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.section-title {
+			margin: 0 0 14px;
+			font-family: "Bebas Neue", sans-serif;
+			letter-spacing: 1.2px;
+			font-size: clamp(2rem, 4.5vw, 3.1rem);
+			line-height: 1;
+		}
+
+		.section-subtitle {
+			margin: 0 0 18px;
+			color: #2f6b46;
+			font-weight: 500;
+			font-size: 1rem;
+		}
+
+		.products-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 12px;
+		}
+
+		.product-card {
+			border: 1.5px dashed #73ba8c;
+			background: #edf9f1;
+			border-radius: 12px;
+			padding: 12px;
+			display: grid;
+			grid-template-columns: minmax(220px, 340px) 1fr;
+			gap: 14px;
+			align-items: start;
+		}
+
+		.product-shot {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
+			border-radius: 10px;
+			border: 2px solid #b9dfc7;
+			display: block;
+		}
+
+		.product-body {
+			display: grid;
+			gap: 6px;
+		}
+
+		.product-card h3 {
+			margin: 0 0 6px;
+			font-size: 1.04rem;
+			color: #1f3b2a;
+		}
+
+		.product-card p {
+			margin: 0;
+			color: #2f6b46;
+			font-size: 0.93rem;
+		}
+
+		.product-card ul {
+			margin: 10px 0 0;
+			padding-left: 18px;
+			color: #2f6b46;
+			font-size: 0.9rem;
+		}
+
+		.product-link {
+			display: inline-block;
+			margin-top: 10px;
+			padding: 8px 14px;
+			border-radius: 999px;
+			text-decoration: none;
+			font-size: 0.86rem;
+			font-weight: 700;
+			color: #f7fff9;
+			background: #5fa979;
+			border: 1px solid #5fa979;
+			transition: filter 0.2s;
+		}
+
+		.product-link:hover {
+			filter: brightness(0.95);
+		}
+
+		.media-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 12px;
+		}
+
+		.media-card {
+			background: linear-gradient(140deg, #edf9f1 0%, #d7efdf 100%);
+			border: 2px solid #b9dfc7;
+			border-radius: 12px;
+			padding: 14px;
+			min-height: 170px;
+			display: grid;
+			align-content: center;
+			gap: 8px;
+		}
+
+		.media-card h3 {
+			margin: 0;
+			font-size: 1.02rem;
+			color: #1f3b2a;
+		}
+
+		.media-card p {
+			margin: 0;
+			font-size: 0.93rem;
+			color: #2f6b46;
+		}
+
+		.media-card iframe {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			border: 0;
+			border-radius: 10px;
+			display: block;
+		}
+
+		.shot {
+			width: 100%;
+			border-radius: 12px;
+			border: 2px solid #b9dfc7;
+			background: #edf9f1;
+			object-fit: cover;
+			display: block;
+			aspect-ratio: 16 / 10;
+		}
+
+		.links {
+			display: grid;
+			gap: 8px;
+		}
+
+		.links a {
+			color: #2f6b46;
+			font-weight: 700;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 3px;
+			word-break: break-word;
+		}
+
+		.hashtag-cloud {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+
+		.tag {
+			background: #edf9f1;
+			border: 1.5px solid #73ba8c;
+			border-radius: 999px;
+			padding: 6px 11px;
+			font-weight: 700;
+			color: #2f6b46;
+			font-size: 0.9rem;
+			text-decoration: none;
+			transition: background 0.2s, color 0.2s, border-color 0.2s;
+		}
+
+		.tag:hover {
+			background: #5fa979;
+			color: #f7fff9;
+			border-color: #5fa979;
+		}
+
+		.policy-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+			gap: 12px;
+		}
+
+		.policy-card {
+			background: #edf9f1;
+			border: 1px solid #b9dfc7;
+			border-radius: 12px;
+			padding: 12px;
+		}
+
+		.policy-card h3 {
+			margin: 0 0 6px;
+			font-size: 1.04rem;
+			color: #1f3b2a;
+		}
+
+		.policy-card p {
+			margin: 0;
+			color: #2f6b46;
+			font-size: 0.94rem;
+		}
+
+		.contacts {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+			gap: 12px;
+		}
+
+		.contact-card {
+			background: #edf9f1;
+			border: 1px solid #b9dfc7;
+			border-radius: 12px;
+			padding: 12px;
+		}
+
+		.contact-card h3 {
+			margin: 0 0 6px;
+			font-size: 1.04rem;
+			color: #1f3b2a;
+		}
+
+		.contact-card p {
+			margin: 0;
+			color: #2f6b46;
+			font-size: 0.94rem;
+		}
+
+		.contact-card a {
+			color: #3f8658;
+		}
+
+		footer {
+			margin: 24px auto 10px;
+			text-align: center;
+			color: #2f6b46;
+			font-size: 0.9rem;
+			font-weight: 600;
+			letter-spacing: 0.2px;
+		}
+
+		@media (max-width: 920px) {
+			.hero-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media (max-width: 560px) {
+			.wrap {
+				padding: 10px;
+			}
+
+			.shape-e {
+				display: none;
+			}
+
+			section,
+			.hero-grid {
+				padding: 16px;
+			}
+
+			.media-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.product-card {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="bg-shape shape-a"></div>
+	<div class="bg-shape shape-b"></div>
+	<div class="bg-shape shape-c"></div>
+	<div class="bg-shape shape-d"></div>
+	<div class="bg-shape shape-e"></div>
+	<div class="bg-shape shape-f"></div>
+
+	<main class="wrap">
+		<header class="hero">
+			<div class="hero-grid">
+				<div>
+					<h1 class="app-title">Max Sanna Products</h1>
+					<p>
+						I build optimized light weight Android applications that combine practical utility, polished user interface design, and long-term maintainability.
+						My portfolio covers educational apps, puzzle games, technic building instructions and creative tools.
+					</p>
+					<div class="pill-list" aria-label="core strengths">
+						<span class="pill">Permanent Success</span>
+						<span class="pill">Exceptional Performance</span>
+						<span class="pill">Privacy by Design</span>
+						<span class="pill">Outstanding Quality </span>
+						<span class="pill">AI Fairness and Responsibility </span>
+						<span class="pill">Sustainable Delivery</span>
+					</div>
+				</div>
+				<aside class="hero-stats" aria-label="company highlights">
+					<h2>Why people like Max Sanna products</h2>
+					<ul>
+						<li>Phone and tablet optimized experience</li>
+						<li>Detailed visual building instructions</li>
+						<li>Suitable for kids, teens, and adult fans</li>
+						<li>Alternative models for standard sets</li>
+						<li>Complex problem-solving and rewarding process</li>
+                        <li>Lightweight software without unnecessary features</li>
+                        <li>Greater privacy focus software</li>
+                        <li>Lower cost compared with large commercial solutions</li>
+					</ul>
+				</aside>
+			</div>
+		</header>
+
+		<nav class="main-nav" aria-label="Section navigation">
+			<a href="#products">Products</a>
+			<a href="#media">Media</a>
+			<a href="#important-links">Important links</a>
+			<a href="#sustainability">Sustainability</a>
+			<a href="#responsible-ai">Responsible AI</a>
+			<a href="#cybersecurity">Data Privacy</a>
+			<a href="#contacts">Contacts</a>
+		</nav>
+
+		<section id="products">
+			<h2 class="section-title">Max Sanna Products</h2>
+			<p class="section-subtitle">Explore our Android applications and open each product page for details.</p>
+			<div class="products-grid">
+				<article class="product-card">
+					<img class="product-shot" src="best.free.lego.building.instructions.android.app\best.free.lego.building.instructions.android.app.images\the.best.lego.building.instructions.android.app.banner.1.png" alt="Building Instructions Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>Building Instructions - Building Instructions for Custom Lego Models</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Clear and Detailed build sequence</li>
+							<li>Model-specific inventory</li>
+							<li>Phone and tablet optimized experience</li>
+						</ul>
+						<a class="product-link" href="best.free.lego.building.instructions.android.app\index.html">Open Building Instructions App site</a>
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="best.free.lego.technic.building.instructions.android.app\best.free.lego.technic.building.instructions.android.app.images\best.lego.technic.building.instructions.android.app.banner.1.png" alt="Technic Building Instructions Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>Technic Building Instructions - Building Instructions for Custom Lego Technic Models</h3>
+						<p>Step-by-step Lego Technic vechicle model guidance with inventory lists for every custom Technic model.</p>
+						<ul>
+							<li>Clear and Detailed build sequence</li>
+							<li>Model-specific inventory</li>
+							<li>Phone and tablet optimized experience</li>
+						</ul>
+						<a class="product-link" href="best.free.lego.technic.building.instructions.android.app\index.html">Open Technic Building Instructions App site</a>
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\amazing.logic.15.photo.sliding.puzzle.android.game.banner.1.jpg" alt="15 Photo Puzzle - Free Android Puzzle Game" loading="lazy" />
+					<div class="product-body">
+						<h3>15 Photo Puzzle - Free Android Puzzle Game</h3>
+						<p>Amazing free logic sliding puzzle android game with beautiful photos.</p>
+						<ul>
+							<li>Customizable difficulty </li>
+							<li>Diverse photo library</li>
+							<li>Kid-Friendly progress view</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open 15 Photo Puzzle Free Android Game site</a>
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\the.best.lego.moc.building.instructions.android.app.banner.1.png" alt="MOC Technic Building Instructions Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>MOC Technic Instructions Android App - Building Instructions for Custom Lego Models</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Clear and Detailed build sequence</li>
+							<li>Model-specific inventory</li>
+							<li>Phone and tablet optimized experience</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open MOC Technic Building Instructions Android App site</a>
+					</div>
+				</article>
+								<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\best.educational.app.multiplication.table.banner.1.png" alt=">Multiplication Table - Educational Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>Multiplication Table - Free Educational Android App</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Interactive learning interface</li>
+							<li>Various traning modes</li>
+							<li>Kid-friendly design</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open Multiplication Table Free Educational Android App site</a>
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\amazing.logic.15.photo.sliding.puzzle.mix.android.game.banner.1.png" alt="15 Photo Puzzle Mix - Android Sliding Puzzle Game" loading="lazy" />
+					<div class="product-body">
+						<h3>15 Photo Puzzle Mix - Android Sliding Puzzle Game</h3>
+						<p>Amazing logic sliding puzzle android game with even more beautiful photos.</p>
+						<ul>
+							<li>Customizable difficulty </li>
+							<li>Diverse photo library</li>
+							<li>Kid-Friendly progress view</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open 15 Photo Puzzle Mix Android Game site</a>
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\the.best.lego.moc.building.instructions.prime.android.app.banner.1.png" alt="MOC Technic Building Instructions Prime Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>MOC Technic Instructions Prime Android App - Building Instructions for Custom Lego Models</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Clear and Detailed build sequence</li>
+							<li>Model-specific inventory</li>
+							<li>Phone and tablet optimized experience</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open MOC Technic Building Instructions Prime Android App site</a>
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\best.educational.app.multiplication.table.guru.banner.1.png" alt=">Multiplication Table Guru - Educational Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>Multiplication Table Guru - Educational Android App</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Interactive learning interface</li>
+							<li>Various traning modes</li>
+							<li>Kid-friendly design</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open Multiplication Table Guru Educational Android App site</a>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="media">
+			<h2 class="section-title">Max Sanna Media</h2>
+			<p class="section-subtitle">Watch featured videos from Max Sanna YouTube channel.</p>
+			<div class="media-grid">
+				<article class="media-card">
+					<h3>Lego Building Instructions - Promotional Video</h3>
+					<iframe
+					src="https://www.youtube.com/embed/20T3YVKw6vk?si=NjN0kryys79Cvd0d"
+					title="Lego Building Instructions - Promotional Video"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+					loading="lazy"
+					></iframe>
+				</article>
+				<article class="media-card">
+					<h3>Lego Technic Building Instructions - Promotional Video</h3>
+					<iframe
+					src="https://www.youtube.com/embed/tWbmhJG_FdI?si=PTV_caeMmaj6jMgG"
+					title="Lego Technic Building Instructions - Promotional Video"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+					loading="lazy"
+					></iframe>
+				</article>
+				<article class="media-card">
+					<h3>15 Photo Puzzle - Free Android Game - Promotional Video</h3>
+					<iframe
+					src="https://www.youtube.com/embed/qO6eYrYz0PM?si=ZNzsPdlDQSezR_GA"
+					title="15 Photo Puzzle - Free Android Game - Promotional Video"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+					loading="lazy"
+					></iframe>
+				</article>
+			</div>
+		</section>
+
+		<section id="hashtags">
+			<h2 class="section-title">Max Sanna Products Hash Tags</h2>
+			<p class="section-subtitle">Hash Tags for Max Sanna products.</p>
+			<div class="hashtag-cloud" aria-label="hashtags">
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#LegoBuildingInstructions</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#LegoTechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#AndroidApp</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#PullBackBuggy</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#CartoonTruck</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#BulldozerBuild</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#FishingBoatLego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MilitaryTruckModel</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MohawkBuggy</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#STEMToys</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#LEGO</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Legotechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Customlego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Technicmoc</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legomoc</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Customtechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legocreation</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Technicbricks</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Bricks</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Afol</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#LegoBuildingInstructions</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#LegoTechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#AndroidApp</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#PullBackBuggy</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#CartoonTruck</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#BulldozerBuild</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#FishingBoatLego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MilitaryTruckModel</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MohawkBuggy</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#STEMToys</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#LEGO</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Legotechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Customlego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Technicmoc</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legomoc</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Customtechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legocreation</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Technicbricks</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Bricks</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Afol</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legobuilder</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Moc</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legobuild</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Technicwheels</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legomotors</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Pneumatics</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legopneumatics</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Custommoc</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legodesign</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Brickcentral</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legofan</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Techniclife</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legogear</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Powerfunctions</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Controlplus</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Legopower</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Technictruck</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Legocars</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Custombuild</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Brickbuilder</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legocommunity</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Technicworld</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legogeek</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Afols</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legoproject</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Mechanicallego</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legoparts</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Technicparts</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Creativelego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Legomodel</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Brickstagram</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Legomania</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Technicgram</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Advancedlego</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legopowerplus</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Custombrick</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legoset</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Technicmocder</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Legohobby</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Brickengineering</a>
+			</div>
+		</section>
+
+		<section id="important-links">
+			<h2 class="section-title">Important links</h2>
+			<div class="links">
+				<a href="https://www.matthiasreim.de" target="_blank">Matthias Reim (the best music for building Lego)</a>
+				<a href="https://www.lego.com" target="_blank">LEGO Official Website</a>
+				<a href="https://www.lego.com/en-us/service/buildinginstructions" target="_blank">LEGO Building Instructions Portal</a>
+				<a href="https://youtu.be/tWbmhJG_FdI?si=Jy1vcuGCp9HiFniG" target="_blank">LEGO Building Instructions App Videos</a>
+				<a href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">LEGO Building Instructions App site</a>
+				<a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">LEGO Building Instructions App site</a>
+				<a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">LEGO Technic Building Instructions App site</a>
+				<a href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">LEGO Technic Building Instructions App site</a>
+			</div>
+		</section>
+
+		<section id="sustainability">
+			<h2 class="section-title">Sustainability, Impact and Responsibility</h2>
+			<p>
+            I believe that responsible business growth must go hand in hand with care for people, communities and the natural world. Sustainability is not a separate initiative for me; it is part of how I make decisions, design solutions and build long-term value. I am committed to reducing my environmental impact through smarter use of resources, lower waste, energy-efficient operations and responsible sourcing across my value chain.
+            My responsibility extends beyond compliance. I aim to understand the real impact of my activities and take practical action where I can make a measurable difference. This includes supporting circular economy principles, choosing materials and partners carefully, improving efficiency, and encouraging innovation that helps protect ecosystems and biodiversity.
+            Nature protection is central to my vision of sustainable progress. Healthy forests, clean water, resilient habitats and thriving species are essential to the wellbeing of future generations. That is why I continuously look for ways to prevent pollution, reduce emissions and support practices that preserve natural resources.
+            I know that trust is earned through transparency and consistent action. By setting meaningful goals, monitoring my progress and working with employees, customers and partners, I strive to create a positive impact today while helping build a more sustainable tomorrow.
+            </p>
+		</section>
+
+		<section id="responsible-ai">
+			<h2 class="section-title">Responsible Use of AI Technologies</h2>
+			<p>
+            I use AI technologies with a clear sense of responsibility, ensuring that innovation supports people, protects privacy and contributes to sustainable progress. AI can help improve efficiency, reduce repetitive work and support better decisions, but it must be applied with transparency, fairness and appropriate human oversight. I believe that technology should enhance human judgment rather than replace accountability.
+            In practice, this means using data carefully, respecting confidentiality, checking outputs for accuracy and bias, and choosing AI solutions that are secure, reliable and proportionate to the task. I also recognize that digital technologies have an environmental footprint, so I aim to use AI thoughtfully and efficiently, focusing on real value rather than unnecessary complexity. By combining innovation with ethics, safety and sustainability, I seek to make AI a positive force for business, society and the natural environment.
+			</p>
+		</section>
+
+		<section id="cybersecurity">
+			<h2 class="section-title">Cybersecurity and Data Protection</h2>
+			<p>
+            I treat cybersecurity and data protection as essential foundations of trust. In every digital activity, I aim to protect information from unauthorized access, misuse, loss or disruption. This means handling personal, business and technical data with care, using secure systems, limiting access to what is necessary, and respecting privacy throughout the full data lifecycle.
+            My approach is based on prevention, awareness and continuous improvement. I support strong authentication, appropriate encryption, regular updates, responsible data retention and clear procedures for identifying and responding to security risks. I also recognize that effective protection is not only a technical matter; it depends on responsible behaviour, accurate information handling and a culture of vigilance.
+            By protecting data and strengthening digital resilience, I help safeguard customers, partners, employees and the wider organization. I am committed to using technology in a way that supports confidentiality, integrity, availability and compliance, while maintaining confidence in the services and relationships that matter most.
+			</p>
+		</section>
+		
+		<section id="disclaimer">
+			<h2 class="section-title">Disclaimer</h2>
+			<p class="section-subtitle">LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site.</p>
+		</section>
+
+		<section id="contacts">
+			<h2 class="section-title">Contacts</h2>
+			<div class="contacts">
+				<article class="contact-card">
+					<h3>Website</h3>
+					<p><a href="https://sachsensoft.github.io" target="_blank">https://sachsensoft.github.io</a></p>
+					<p><a href="https://sachsensoft.gitlab.io" target="_blank">https://sachsensoft.gitlab.io</a></p>
+				</article>
+				<article class="contact-card">
+					<h3>YouTube Channel</h3>
+					<p><a href="https://www.youtube.com/@sachsensoft" target="_blank">https://www.youtube.com/@sachsensoft</a></p>
+				</article>
+				<article class="contact-card">
+					<h3>WordPress</h3>
+					<p><a href="https://sachsensoft.wordpress.com" target="_blank">https://sachsensoft.wordpress.com</a></p>
+				</article>
+			</div>
+		</section>
+
+		<footer>
+			· Technic Building Instructions Android App · Building Instructions Android App · 15 Photo Puzzle · © Max Sanna · All rights reserved · <span id="year"></span> ·
+		</footer>
+	</main>
+
+	<script>
+		document.getElementById("year").textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>

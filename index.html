@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<title>Max Sanna Products and Services</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+	<style>
+		:root {
+			--bg: #e9f8ee;
+			--paper: #f4fff7;
+			--ink: #1f3b2a;
+			--muted: #2f6b46;
+			--accent-blue: #5fa979;
+			--accent-yellow: #d8f1df;
+			--accent-navy: #e9f8ee;
+			--line: #b9dfc7;
+			--card-shadow: 0 14px 32px rgba(43, 94, 63, 0.2);
+			--radius-lg: 20px;
+			--radius-md: 14px;
+			--max-width: 1240px;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: "Manrope", "Segoe UI", sans-serif;
+			color: var(--ink);
+			background:
+				radial-gradient(circle at 15% -5%, #d8f3df 0%, transparent 34%),
+				radial-gradient(circle at 90% 0%, #ccefd7 0%, transparent 30%),
+				linear-gradient(160deg, #e9f8ee 0%, #e2f5e9 45%, #f4fff7 100%);
+			line-height: 1.6;
+		}
+
+		.bg-shape {
+			position: fixed;
+			z-index: -1;
+			border-radius: 28px;
+			opacity: 0.3;
+			transform: rotate(16deg);
+			animation: drift 14s ease-in-out infinite;
+		}
+
+		.shape-a {
+			width: 190px;
+			height: 140px;
+			background: #8fcea5;
+			top: 12vh;
+			left: -40px;
+		}
+
+		.shape-b {
+			width: 240px;
+			height: 120px;
+			background: #73ba8c;
+			top: 52vh;
+			right: -70px;
+			animation-delay: -5s;
+		}
+
+		.shape-c {
+			width: 120px;
+			height: 120px;
+			background: #dff4e6;
+			bottom: 8vh;
+			left: 8vw;
+			animation-delay: -8s;
+		}
+
+		.shape-d {
+			width: 110px;
+			height: 110px;
+			background: #67af82;
+			top: 26vh;
+			right: 16vw;
+			animation-delay: -2.5s;
+		}
+
+		.shape-e {
+			width: 150px;
+			height: 150px;
+			background: #94d3aa;
+			bottom: 24vh;
+			left: 30vw;
+			animation-delay: -6.5s;
+		}
+
+		.shape-f {
+			width: 90px;
+			height: 90px;
+			background: #5fa979;
+			top: 68vh;
+			left: 64vw;
+			animation-delay: -10s;
+		}
+
+		@keyframes drift {
+			0%,
+			100% {
+				transform: translateY(0) rotate(16deg);
+			}
+			50% {
+				transform: translateY(-10px) rotate(19deg);
+			}
+		}
+
+		.wrap {
+			max-width: var(--max-width);
+			margin: 0 auto;
+			padding: 18px;
+		}
+
+		header.hero {
+			background: linear-gradient(130deg, #e2f6e9 0%, #d3efdd 100%);
+			color: #1f3b2a;
+			border: 4px solid #5fa979;
+			border-radius: var(--radius-lg);
+			box-shadow: var(--card-shadow);
+			overflow: hidden;
+			position: relative;
+			margin-top: 10px;
+			animation: revealUp 0.8s ease-out;
+		}
+
+		header.hero::before {
+			content: "";
+			position: absolute;
+			inset: auto auto -40px -40px;
+			width: 260px;
+			height: 260px;
+			background: radial-gradient(circle, rgba(95, 169, 121, 0.26), rgba(95, 169, 121, 0));
+			pointer-events: none;
+		}
+
+		.hero-grid {
+			display: grid;
+			grid-template-columns: 1.2fr 1fr;
+			gap: 22px;
+			padding: 34px;
+		}
+
+		.app-title {
+			font-family: "Bebas Neue", sans-serif;
+			letter-spacing: 1.5px;
+			font-size: clamp(2.5rem, 6vw, 4.6rem);
+			margin: 0;
+			line-height: 0.95;
+		}
+
+		.hero p {
+			margin: 14px 0 0;
+			max-width: 62ch;
+			color: rgba(31, 59, 42, 0.92);
+			font-size: 1.04rem;
+		}
+
+		.pill-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-top: 18px;
+		}
+
+		.pill {
+			background: rgba(95, 169, 121, 0.13);
+			border: 1px solid rgba(95, 169, 121, 0.45);
+			color: #1f3b2a;
+			border-radius: 999px;
+			padding: 6px 12px;
+			font-size: 0.85rem;
+			font-weight: 700;
+			letter-spacing: 0.3px;
+		}
+
+		.hero-stats {
+			background: rgba(255, 255, 255, 0.52);
+			border: 1px solid rgba(95, 169, 121, 0.35);
+			border-radius: var(--radius-md);
+			padding: 14px;
+			align-self: start;
+			backdrop-filter: blur(4px);
+		}
+
+		.hero-stats h2 {
+			margin: 0 0 8px;
+			font-family: "Bebas Neue", sans-serif;
+			font-size: 1.6rem;
+			letter-spacing: 0.9px;
+		}
+
+		.hero-stats ul {
+			margin: 0;
+			padding-left: 18px;
+		}
+
+		.hero-stats li {
+			margin: 4px 0;
+		}
+
+		nav.main-nav {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			margin-top: 28px;
+			justify-content: center;
+		}
+
+		nav.main-nav a {
+			display: inline-block;
+			padding: 10px 20px;
+			border-radius: 999px;
+			background: #edf9f1;
+			border: 2px solid #73ba8c;
+			color: #2f6b46;
+			font-family: "Manrope", sans-serif;
+			font-weight: 700;
+			font-size: 0.92rem;
+			letter-spacing: 0.3px;
+			text-decoration: none;
+			transition: background 0.2s, color 0.2s, border-color 0.2s;
+			white-space: nowrap;
+		}
+
+		nav.main-nav a:hover {
+			background: #5fa979;
+			color: #f7fff9;
+			border-color: #5fa979;
+		}
+
+		section {
+			margin-top: 28px;
+			background: var(--paper);
+			border: 2px solid var(--line);
+			border-radius: var(--radius-lg);
+			box-shadow: var(--card-shadow);
+			padding: 24px;
+			animation: revealUp 0.8s ease both;
+			color: var(--ink);
+		}
+
+		section:nth-of-type(1) { animation-delay: 0.05s; }
+		section:nth-of-type(2) { animation-delay: 0.1s; }
+		section:nth-of-type(3) { animation-delay: 0.15s; }
+		section:nth-of-type(4) { animation-delay: 0.2s; }
+		section:nth-of-type(5) { animation-delay: 0.25s; }
+		section:nth-of-type(6) { animation-delay: 0.3s; }
+		section:nth-of-type(7) { animation-delay: 0.35s; }
+		section:nth-of-type(8) { animation-delay: 0.4s; }
+
+		@keyframes revealUp {
+			from {
+				opacity: 0;
+				transform: translateY(16px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.section-title {
+			margin: 0 0 14px;
+			font-family: "Bebas Neue", sans-serif;
+			letter-spacing: 1.2px;
+			font-size: clamp(2rem, 4.5vw, 3.1rem);
+			line-height: 1;
+		}
+
+		.section-subtitle {
+			margin: 0 0 18px;
+			color: #2f6b46;
+			font-weight: 500;
+			font-size: 1rem;
+		}
+
+		.products-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 12px;
+		}
+
+		.product-card {
+			border: 1.5px dashed #73ba8c;
+			background: #edf9f1;
+			border-radius: 12px;
+			padding: 12px;
+			display: grid;
+			grid-template-columns: minmax(220px, 340px) 1fr;
+			gap: 14px;
+			align-items: start;
+		}
+
+		.product-shot {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
+			border-radius: 10px;
+			border: 2px solid #b9dfc7;
+			display: block;
+		}
+
+		.product-body {
+			display: grid;
+			gap: 6px;
+		}
+
+		.product-card h3 {
+			margin: 0 0 6px;
+			font-size: 1.04rem;
+			color: #1f3b2a;
+		}
+
+		.product-card p {
+			margin: 0;
+			color: #2f6b46;
+			font-size: 0.93rem;
+		}
+
+		.product-card ul {
+			margin: 10px 0 0;
+			padding-left: 18px;
+			color: #2f6b46;
+			font-size: 0.9rem;
+		}
+
+		.product-link {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			margin-top: 10px;
+			padding: 8px 14px;
+			border-radius: 999px;
+			text-decoration: none;
+			font-size: 0.86rem;
+			font-weight: 700;
+			color: #f7fff9;
+			background: #5fa979;
+			border: 1px solid #5fa979;
+			transition: filter 0.2s;
+		}
+
+		.product-link:hover {
+			filter: brightness(0.95);
+		}
+
+		.media-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 12px;
+		}
+
+		.media-card {
+			background: linear-gradient(140deg, #edf9f1 0%, #d7efdf 100%);
+			border: 2px solid #b9dfc7;
+			border-radius: 12px;
+			padding: 14px;
+			min-height: 170px;
+			display: grid;
+			align-content: center;
+			gap: 8px;
+		}
+
+		.media-card h3 {
+			margin: 0;
+			font-size: 1.02rem;
+			color: #1f3b2a;
+		}
+
+		.media-card p {
+			margin: 0;
+			font-size: 0.93rem;
+			color: #2f6b46;
+		}
+
+		.media-card iframe {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			border: 0;
+			border-radius: 10px;
+			display: block;
+		}
+
+		.shot {
+			width: 100%;
+			border-radius: 12px;
+			border: 2px solid #b9dfc7;
+			background: #edf9f1;
+			object-fit: cover;
+			display: block;
+			aspect-ratio: 16 / 10;
+		}
+
+		.links {
+			display: grid;
+			gap: 8px;
+		}
+
+		.links a {
+			color: #2f6b46;
+			font-weight: 700;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 3px;
+			word-break: break-word;
+		}
+
+		.hashtag-cloud {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+
+		.tag {
+			background: #edf9f1;
+			border: 1.5px solid #73ba8c;
+			border-radius: 999px;
+			padding: 6px 11px;
+			font-weight: 700;
+			color: #2f6b46;
+			font-size: 0.9rem;
+			text-decoration: none;
+			transition: background 0.2s, color 0.2s, border-color 0.2s;
+		}
+
+		.tag:hover {
+			background: #5fa979;
+			color: #f7fff9;
+			border-color: #5fa979;
+		}
+
+		.policy-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+			gap: 12px;
+		}
+
+		.policy-card {
+			background: #edf9f1;
+			border: 1px solid #b9dfc7;
+			border-radius: 12px;
+			padding: 12px;
+		}
+
+		.policy-card h3 {
+			margin: 0 0 6px;
+			font-size: 1.04rem;
+			color: #1f3b2a;
+		}
+
+		.policy-card p {
+			margin: 0;
+			color: #2f6b46;
+			font-size: 0.94rem;
+		}
+
+		.contacts {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+			gap: 12px;
+		}
+
+		.contact-card {
+			background: #edf9f1;
+			border: 1px solid #b9dfc7;
+			border-radius: 12px;
+			padding: 12px;
+		}
+
+		.contact-card h3 {
+			margin: 0 0 6px;
+			font-size: 1.04rem;
+			color: #1f3b2a;
+		}
+
+		.contact-card p {
+			margin: 0;
+			color: #2f6b46;
+			font-size: 0.94rem;
+		}
+
+		.contact-card a {
+			color: #3f8658;
+		}
+
+		.cross-text a:link {
+			color:inherit
+			}
+		
+		.cross-text a:visited {
+			color:inherit
+			}
+
+		footer {
+			margin: 24px auto 10px;
+			text-align: center;
+			color: #2f6b46;
+			font-size: 0.9rem;
+			font-weight: 600;
+			letter-spacing: 0.2px;
+		}
+
+		@media (max-width: 920px) {
+			.hero-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media (max-width: 560px) {
+			.wrap {
+				padding: 10px;
+			}
+
+			.shape-e {
+				display: none;
+			}
+
+			section,
+			.hero-grid {
+				padding: 16px;
+			}
+
+			.media-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.product-card {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="bg-shape shape-a"></div>
+	<div class="bg-shape shape-b"></div>
+	<div class="bg-shape shape-c"></div>
+	<div class="bg-shape shape-d"></div>
+	<div class="bg-shape shape-e"></div>
+	<div class="bg-shape shape-f"></div>
+
+	<main class="wrap">
+		<header class="hero">
+			<div class="hero-grid">
+				<div>
+					<h1 class="app-title">Max Sanna Products</h1>
+					<p>
+						I build optimized light weight Android applications that combine practical utility, polished user interface design, and long-term maintainability.
+						My portfolio covers educational apps, puzzle games, technic building instructions and creative tools.
+					</p>
+					<div class="pill-list" aria-label="core strengths">
+						<span class="pill">Permanent Success</span>
+						<span class="pill">Exceptional Performance</span>
+						<span class="pill">Privacy by Design</span>
+						<span class="pill">Outstanding Quality </span>
+						<span class="pill">AI Fairness and Responsibility </span>
+						<span class="pill">Sustainable Delivery</span>
+					</div>
+				</div>
+				<aside class="hero-stats" aria-label="company highlights">
+					<h2>Why people like Max Sanna products</h2>
+					<ul>
+						<li>Phone and tablet optimized experience</li>
+						<li>Detailed visual Lego building instructions</li>
+						<li>Suitable for kids, teens, and adult fans</li>
+						<li>Alternative models for standard Lego sets</li>
+						<li>Complex problem-solving and rewarding process</li>
+                        <li>Lightweight software without unnecessary features</li>
+                        <li>Greater privacy focus software</li>
+                        <li>Lower cost compared with other commercial solutions</li>
+					</ul>
+				</aside>
+			</div>
+		</header>
+
+		<nav class="main-nav" aria-label="Section navigation">
+			<a href="#products">Products</a>
+			<a href="#media">Promo Videos</a>
+			<a href="#important-links">Important links</a>
+			<a href="#sustainability">Sustainability</a>
+			<a href="#responsible-ai">Responsible AI</a>
+			<a href="#cybersecurity">Data Privacy</a>
+			<a href="#contacts">Contacts</a>
+		</nav>
+
+		<section id="products">
+			<h2 class="section-title">Max Sanna Products</h2>
+			<p class="section-subtitle">Explore our Android applications and open each product page for details.</p>
+			<div class="products-grid">
+				<article class="product-card">
+					<img class="product-shot" src="best.free.lego.building.instructions.android.app\best.free.lego.building.instructions.android.app.images\the.best.lego.building.instructions.android.app.banner.1.png" alt="Building Instructions Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>Building Instructions - Free Building Instructions for Custom Lego Models</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Clear and Detailed build sequence</li>
+							<li>Model-specific inventory</li>
+							<li>Phone and tablet optimized experience</li>
+						</ul>
+						<a class="product-link" href="best.free.lego.building.instructions.android.app\index.html">Open Building Instructions Free Android App site</a>
+				
+					<div class="cross-text">
+					<p><br>The mobile application for <a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html">Lego Technic building instructions</a> stands out as a transformative tool for enthusiasts and beginners alike.
+					Its simple and <a href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html">clear user interface</a> ensures that users of all skill levels can navigate the app with ease, making the building process intuitive and enjoyable.
+					The incredible performance of the app further enhances the experience, ensuring smooth transitions between steps and rapid loading times, which keeps the building momentum alive without unnecessary interruptions.
+					<br>What truly sets this application apart is its <a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html">detailed step-by-step building instructions</a>.
+					Each model is meticulously documented, guiding users through every brick placement with precision. This attention to detail minimizes errors and boosts confidence, allowing builders to focus on the joy of construction rather than frustration.
+					Whether you are a seasoned builder or a first-time enthusiast, the clarity of the instructions empowers you to tackle complex models with ease.
+					<br>The app features a stunning array of <a href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html">Lego Technic vehicle models</a>, each designed to be both beautiful and fun to play with.
+					From the dynamic <a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html">Pull Back Buggy</a> to the robust <a href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html">Cartoon Truck</a>, every model offers a unique building challenge and play value.
+					The <a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html">Technic Bulldozer</a> provides a realistic engineering experience, while the <a href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html">Military Truck</a> delivers an adventurous spirit perfect for role-play scenarios.
+					For water enthusiasts, the <a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html">Fishing Boat</a> offers a serene yet engaging build, and the <a href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html">Mohawk Buggy</a> stands out with its rugged design and high-performance capabilities. Each model is crafted to inspire creativity and provide hours of entertainment once completed.
+					<br>This application not only simplifies the building process but also elevates the entire <a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html">Lego Technic</a> experience.
+					By combining a user-friendly interface, exceptional performance, and comprehensive instructions, it bridges the gap between digital guidance and physical creativity.
+					The inclusion of diverse and exciting models ensures that there is something for everyone, from casual builders to dedicated collectors.
+					Ultimately, this app is more than just a set of instructions—it is a companion that enhances the joy of building and playing with <a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html">Lego Technic vehicles</a>, making every build session an adventure worth embarking on.
+					<br>In short, the app redefines the way we approach <a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html">Lego Technic models</a>, offering an unparalleled experience that is both educational and entertaining.
+					With its commitment to quality and user satisfaction, it is undoubtedly a must-have for any <a href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html">Lego Technic</a> enthusiast.
+					</p></div>
+
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="best.free.lego.technic.building.instructions.android.app\best.free.lego.technic.building.instructions.android.app.images\best.lego.technic.building.instructions.android.app.banner.1.png" alt="Technic Building Instructions Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>Technic Building Instructions - Building Instructions for Custom Lego Technic Models</h3>
+						<p>Step-by-step Lego Technic vechicle model guidance with inventory lists for every custom Technic model.</p>
+						<ul>
+							<li>Clear and Detailed build sequence</li>
+							<li>Model-specific inventory</li>
+							<li>Phone and tablet optimized experience</li>
+						</ul>
+						<a class="product-link" href="best.free.lego.technic.building.instructions.android.app\index.html">Open Technic Building Instructions Android App site</a>
+
+					<div class="cross-text">
+					<p><br>The mobile application for <a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html">Lego Technic building instructions</a> stands out as a transformative tool for enthusiasts and beginners alike.
+					Its simple and <a href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html">clear user interface</a> ensures that users of all skill levels can navigate the app with ease, making the building process intuitive and enjoyable.
+					The incredible performance of the app further enhances the experience, ensuring smooth transitions between steps and rapid loading times, which keeps the building momentum alive without unnecessary interruptions.
+					<br>What truly sets this application apart is its <a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html">detailed step-by-step building instructions</a>.
+					Each model is meticulously documented, guiding users through every brick placement with precision. This attention to detail minimizes errors and boosts confidence, allowing builders to focus on the joy of construction rather than frustration.
+					Whether you are a seasoned builder or a first-time enthusiast, the clarity of the instructions empowers you to tackle complex models with ease.
+					<br>The app features a stunning array of <a href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html">Lego Technic vehicle models</a>, each designed to be both beautiful and fun to play with.
+					From the dynamic <a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html">Pull Back Buggy</a> to the robust <a href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html">Cartoon Truck</a>, every model offers a unique building challenge and play value.
+					The <a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html">Technic Bulldozer</a> provides a realistic engineering experience, while the <a href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html">Military Truck</a> delivers an adventurous spirit perfect for role-play scenarios.
+					For water enthusiasts, the <a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html">Fishing Boat</a> offers a serene yet engaging build, and the <a href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html">Mohawk Buggy</a> stands out with its rugged design and high-performance capabilities. Each model is crafted to inspire creativity and provide hours of entertainment once completed.
+					<br>This application not only simplifies the building process but also elevates the entire <a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html">Lego Technic</a> experience.
+					By combining a user-friendly interface, exceptional performance, and comprehensive instructions, it bridges the gap between digital guidance and physical creativity.
+					The inclusion of diverse and exciting models ensures that there is something for everyone, from casual builders to dedicated collectors.
+					Ultimately, this app is more than just a set of instructions—it is a companion that enhances the joy of building and playing with <a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html">Lego Technic vehicles</a>, making every build session an adventure worth embarking on.
+					<br>In short, the app redefines the way we approach <a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html">Lego Technic models</a>, offering an unparalleled experience that is both educational and entertaining.
+					With its commitment to quality and user satisfaction, it is undoubtedly a must-have for any <a href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html">Lego Technic</a> enthusiast.
+					</p></div>
+						
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\amazing.logic.15.photo.sliding.puzzle.android.game.banner.1.jpg" alt="15 Photo Puzzle - Free Android Puzzle Game" loading="lazy" />
+					<div class="product-body">
+						<h3>15 Photo Puzzle - Free Android Puzzle Game</h3>
+						<p>Amazing free logic sliding puzzle android game with beautiful photos.</p>
+						<ul>
+							<li>Customizable difficulty </li>
+							<li>Collection of stunning photos</li>
+							<li>Kid-Friendly progress view</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open 15 Photo Puzzle Free Android Game site</a>
+						
+						<div class="cross-text">
+						<p><br>A sliding puzzle game of 15 is a classic and timeless brain teaser that challenges players to slide numbered tiles into the correct order. The game typically features a 4x4 grid where 15 tiles are arranged randomly, leaving one empty space. The objective is to slide the tiles into the empty space to arrange them in numerical order from 1 to 15. This game is a perfect combination of fun and cognitive exercise, requiring concentration, critical thinking, and strategic planning.
+						<br>The sliding puzzle game is highly engaging and addictive, as it offers a mix of simplicity and complexity. Players must carefully analyze the grid, identify the correct sequence of moves, and execute them flawlessly to solve the puzzle. The game’s difficulty increases as the number of tiles to be rearranged grows, making it a challenging yet rewarding experience.
+						<br>One of the key features of the sliding puzzle game is its universal appeal. It can be played on various devices, including smartphones, tablets, and desktop computers, making it accessible to people of all ages. Many versions of the game also offer additional features, such as different levels, power-ups, and progress tracking, to keep players motivated and entertained.
+						<br>The game is not only a great way to pass time but also a powerful tool for mental stimulation. It enhances problem-solving skills, improves memory, and boosts overall cognitive function. Whether you're looking for a relaxing pastime or a challenging brain workout, the sliding puzzle game of 15 delivers an unforgettable experience.
+						<br>In summary, the sliding puzzle game of 15 is a delightful blend of logic, strategy, and entertainment. Its simple yet addictive gameplay, combined with its cognitive benefits, makes it a must-play for anyone looking to sharpen their mind while having fun.
+						</p></div>
+						
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\the.best.lego.moc.building.instructions.android.app.banner.1.png" alt="MOC Technic Building Instructions Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>MOC Technic Instructions Android App - Building Instructions for Custom Lego Models</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Clear and Detailed build sequence</li>
+							<li>Model-specific inventory</li>
+							<li>Phone and tablet optimized experience</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open MOC Technic Building Instructions Android App site</a>
+						
+						<div class="cross-text">
+						<p><br>The MOC Technic Instructions app stands out as a transformative tool for creative builders and seasoned enthusiasts alike. Its simple and intuitive user interface ensures that users of all skill levels can navigate the app with ease, making the process of repurposing existing bricks into new creations seamless and enjoyable. The incredible performance of the app further enhances the experience, ensuring smooth transitions between steps and rapid loading times, which keeps the building momentum alive without unnecessary interruptions.
+						<br>What truly sets this application apart is its focus on MOC (My Own Creation) potential. The detailed step-by-step building instructions empower users to construct entirely new models using the bricks they already own. Each model is meticulously documented, guiding builders through clever assembly techniques with precision. This attention to detail minimizes errors and boosts confidence, allowing users to focus on the joy of innovation rather than frustration. Whether you are looking to maximize your existing collection or seek new challenges, the clarity of the instructions empowers you to tackle unique builds with ease.
+						<br>The app features a stunning array of ten distinct Technic models, each designed to be both beautiful and fun to play with. From the rugged Technic Tank to the agile Technic Attack Helicopter, every model offers a unique building challenge and play value. The Technic Stunt Plane provides an exciting aerial experience, while the Technic Motorcycle delivers a sense of speed and power. For utility lovers, the Technic Water Tender offers a practical engineering experience, and the Technic Tractor brings a touch of agricultural realism to the table. The Technic Kayak stands out with its sleek design and water-ready capabilities, while the Technic Mobile Crane showcases impressive structural engineering. Even the unique Cartoon Truck (Black and white version) and Technic Halloween Bat add a touch of nostalgia and seasonal fun, ensuring every build is a memorable adventure.
+						<br>This application not only maximizes the potential of your existing collection but also elevates the entire Technic experience. By combining a user-friendly interface, exceptional performance, and comprehensive MOC instructions, it bridges the gap between digital guidance and physical creativity. The inclusion of diverse and exciting models ensures that there is something for everyone, from casual builders to dedicated collectors. Ultimately, this app is more than just a set of instructions—it is a companion that enhances the joy of building and playing with Technic bricks, making every build session an adventure worth embarking on.
+						<br>In short, the MOC Technic Instructions app redefines the way we approach creative building, offering an unparalleled experience that is both educational and entertaining. With its commitment to quality and user satisfaction, it is undoubtedly a must-have for any Technic enthusiast looking to build something new from what they already have.
+						</p></div>
+						
+					</div>
+				</article>
+								<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\best.educational.app.multiplication.table.banner.1.png" alt=">Multiplication Table - Educational Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>Multiplication Table - Free Educational Android App</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Interactive learning interface</li>
+							<li>Various traning modes</li>
+							<li>Kid-friendly design</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open Multiplication Table Free Educational Android App site</a>
+						
+						<div class="cross-text">
+						<p><br>The Multiplication Table app is a fantastic educational tool for kids to master their math skills. Its simple and convenient interface is designed specifically for children, making navigation easy and engaging. The app offers a comprehensive range of modes, including two learning modes and three testing modes, ensuring a well-rounded approach to mastering the multiplication table.
+						<br>What truly sets this application apart is its focus on interactive learning. The detailed instructions and visual aids guide kids through the process of learning and testing their knowledge. This attention to detail minimizes frustration and boosts confidence, allowing children to focus on the joy of learning mathematics. Whether they are just starting out or looking to improve their speed, the clarity of the instructions empowers them to tackle complex problems with ease.
+						<br>This application not only simplifies the learning process but also elevates the entire math experience for young learners. By combining a user-friendly interface, engaging modes, and comprehensive testing options, it bridges the gap between digital education and academic success. The inclusion of diverse learning and testing modes ensures that there is something for every child, from beginners to advanced students. Ultimately, this app is more than just a tool—it is a companion that enhances the joy of learning math, making every study session an adventure worth embarking on.
+						<br>In short, the Multiplication Table app redefines the way kids approach mathematics, offering an unparalleled experience that is both educational and entertaining. With its commitment to quality and user satisfaction, it is undoubtedly a must-have for any parent or teacher looking to help children master their multiplication skills.
+						</p></div>
+						
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\amazing.logic.15.photo.sliding.puzzle.mix.android.game.banner.1.png" alt="15 Photo Puzzle Mix - Android Sliding Puzzle Game" loading="lazy" />
+					<div class="product-body">
+						<h3>15 Photo Puzzle Mix - Android Sliding Puzzle Game</h3>
+						<p>Amazing logic sliding puzzle android game with even more beautiful photos.</p>
+						<ul>
+							<li>Customizable difficulty </li>
+							<li>Collection of stunning photos</li>
+							<li>Kid-Friendly progress view</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open 15 Photo Puzzle Mix Android Game site</a>
+						
+						<div class="cross-text">
+						<p><br>A sliding puzzle game of 15 is a classic and timeless brain teaser that challenges players to slide numbered tiles into the correct order. The game typically features a 4x4 grid where 15 tiles are arranged randomly, leaving one empty space. The objective is to slide the tiles into the empty space to arrange them in numerical order from 1 to 15. This game is a perfect combination of fun and cognitive exercise, requiring concentration, critical thinking, and strategic planning.
+						<br>The sliding puzzle game is highly engaging and addictive, as it offers a mix of simplicity and complexity. Players must carefully analyze the grid, identify the correct sequence of moves, and execute them flawlessly to solve the puzzle. The game’s difficulty increases as the number of tiles to be rearranged grows, making it a challenging yet rewarding experience.
+						<br>One of the key features of the sliding puzzle game is its universal appeal. It can be played on various devices, including smartphones, tablets, and desktop computers, making it accessible to people of all ages. Many versions of the game also offer additional features, such as different levels, power-ups, and progress tracking, to keep players motivated and entertained.
+						<br>The game is not only a great way to pass time but also a powerful tool for mental stimulation. It enhances problem-solving skills, improves memory, and boosts overall cognitive function. Whether you're looking for a relaxing pastime or a challenging brain workout, the sliding puzzle game of 15 delivers an unforgettable experience.
+						<br>In summary, the sliding puzzle game of 15 is a delightful blend of logic, strategy, and entertainment. Its simple yet addictive gameplay, combined with its cognitive benefits, makes it a must-play for anyone looking to sharpen their mind while having fun.
+						</p></div>
+						
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\the.best.lego.moc.building.instructions.prime.android.app.banner.1.png" alt="MOC Technic Building Instructions Prime Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>MOC Technic Instructions Prime Android App - Building Instructions for Custom Lego Models</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Clear and Detailed build sequence</li>
+							<li>Model-specific inventory</li>
+							<li>Phone and tablet optimized experience</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open MOC Technic Building Instructions Prime Android App site</a>
+						
+						<div class="cross-text">
+						<p><br>The MOC Technic Instructions Prime app is an absolute game-changer for any Android user who loves to build! It is an absolute gem for creative builders and dedicated enthusiasts alike. Its sleek and intuitive user interface ensures that users of all skill levels can navigate the app with total ease, making the process of repurposing existing bricks into entirely new creations seamless and incredibly exciting. The lightning-fast performance of the app further enhances the experience, ensuring smooth transitions between steps and rapid loading times, which keeps the building momentum alive without a single second of downtime.
+						<br>What truly sets this application apart is its incredible focus on MOC (My Own Creation) potential. The detailed step-by-step building instructions empower users to construct entirely new models using the bricks they already own, effectively unlocking the potential of your storage bins! Each model is meticulously documented, guiding builders through clever assembly techniques with absolute precision. This attention to detail minimizes errors and boosts confidence, allowing users to focus on the sheer joy of innovation rather than frustration. Whether you are looking to maximize your existing collection or seek thrilling new challenges, the clarity of the instructions empowers you to tackle unique builds with absolute ease.
+						<br>The app features a spectacular array of ten distinct Technic models, each designed to be both beautiful and fun to play with. From the mighty Technic Tank to the agile Technic Attack Helicopter, every model offers a unique building challenge and play value. The Technic Stunt Plane provides an exciting aerial experience, while the Technic Motorcycle delivers a pure rush of speed and power. For utility lovers, the Technic Water Tender offers a practical engineering experience, and the Technic Tractor brings a touch of rugged agricultural realism to the table. The Technic Kayak stands out with its sleek design and water-ready capabilities, while the Technic Mobile Crane showcases impressive structural engineering. Even the unique Cartoon Truck (Black and white version) and Technic Halloween Bat add a touch of nostalgia and seasonal fun, ensuring every build is a memorable adventure.
+						<br>This application not only maximizes the potential of your existing collection but also elevates the entire Technic experience to new heights. By combining a user-friendly interface, exceptional performance, and comprehensive MOC instructions, it bridges the gap between digital guidance and physical creativity like never before. The inclusion of diverse and exciting models ensures that there is something for everyone, from casual builders to dedicated collectors. Ultimately, this app is more than just a set of instructions—it is a companion that enhances the joy of building and playing with Technic bricks, making every build session an adventure worth embarking on.
+						<br>In short, the MOC Technic Instructions Prime app redefines the way we approach creative building, offering an unparalleled experience that is both educational and entertaining. With its commitment to quality and user satisfaction, it is undoubtedly a must-have for any Technic enthusiast looking to build something new from what they already have. Grab it today and start building again!
+						</p></div>
+						
+					</div>
+				</article>
+				<article class="product-card">
+					<img class="product-shot" src="amazing.logic.15.photo.sliding.puzzle.android.game\amazing.logic.15.photo.sliding.puzzle.android.game.images\best.educational.app.multiplication.table.guru.banner.1.png" alt=">Multiplication Table Guru - Educational Android App" loading="lazy" />
+					<div class="product-body">
+						<h3>Multiplication Table Guru - Educational Android App</h3>
+						<p>Step-by-step Lego model guidance with dedicated inventory lists for every custom model.</p>
+						<ul>
+							<li>Interactive learning interface</li>
+							<li>Various traning modes</li>
+							<li>Kid-friendly design</li>
+						</ul>
+						<a class="product-link" href="index.best.amazing.products.html">Open Multiplication Table Guru Educational Android App site</a>
+						
+						<div class="cross-text">
+						<p><br>The Multiplication Table Guru app is a fantastic educational tool for kids to master their math skills. Its simple and convenient interface is designed specifically for children, making navigation easy and engaging. The app offers a comprehensive range of modes, including two learning modes and three testing modes, ensuring a well-rounded approach to mastering the multiplication table.
+						<br>What truly sets this application apart is its focus on interactive learning. The detailed instructions and visual aids guide kids through the process of learning and testing their knowledge. This attention to detail minimizes frustration and boosts confidence, allowing children to focus on the joy of learning mathematics. Whether they are just starting out or looking to improve their speed, the clarity of the instructions empowers them to tackle complex problems with ease.
+						<br>This application not only simplifies the learning process but also elevates the entire math experience for young learners. By combining a user-friendly interface, engaging modes, and comprehensive testing options, it bridges the gap between digital education and academic success. The inclusion of diverse learning and testing modes ensures that there is something for every child, from beginners to advanced students. Ultimately, this app is more than just a tool—it is a companion that enhances the joy of learning math, making every study session an adventure worth embarking on.
+						<br>In short, the Multiplication Table Guru app redefines the way kids approach mathematics, offering an unparalleled experience that is both educational and entertaining. With its commitment to quality and user satisfaction, it is undoubtedly a must-have for any parent or teacher looking to help children master their multiplication skills.
+						</p></div>
+						
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="media">
+			<h2 class="section-title">Max Sanna Products Promotional Videos</h2>
+			<p class="section-subtitle">Watch featured videos from Max Sanna YouTube channel.</p>
+			<div class="media-grid">
+				<article class="media-card">
+					<h3>Lego Building Instructions - Free Android App - Promotional Video</h3>
+					<iframe
+					src="https://www.youtube.com/embed/20T3YVKw6vk?si=NjN0kryys79Cvd0d"
+					title="Lego Building Instructions - Promotional Video"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+					loading="lazy"
+					></iframe>
+				</article>
+				<article class="media-card">
+					<h3>Lego Technic Building Instructions - Android App - Promotional Video</h3>
+					<iframe
+					src="https://www.youtube.com/embed/tWbmhJG_FdI?si=PTV_caeMmaj6jMgG"
+					title="Lego Technic Building Instructions - Promotional Video"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+					loading="lazy"
+					></iframe>
+				</article>
+				<article class="media-card">
+					<h3>15 Photo Puzzle - Free Android Game - Promotional Video</h3>
+					<iframe
+					src="https://www.youtube.com/embed/qO6eYrYz0PM?si=ZNzsPdlDQSezR_GA"
+					title="15 Photo Puzzle - Free Android Game - Promotional Video"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+					loading="lazy"
+					></iframe>
+				</article>
+			</div>
+		</section>
+
+		<section id="hashtags">
+			<h2 class="section-title">Max Sanna Products Hash Tags</h2>
+			<p class="section-subtitle">Hash Tags for Max Sanna products.</p>
+			<div class="hashtag-cloud" aria-label="hashtags">
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#LegoBuildingInstructions</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#LegoTechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#AndroidApp</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#PullBackBuggy</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#CartoonTruck</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#BulldozerBuild</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#FishingBoatLego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#MilitaryTruckModel</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#MohawkBuggy</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#STEMToys</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#LEGO</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Legotechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Customlego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Technicmoc</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legomoc</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Customtechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legocreation</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Technicbricks</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Bricks</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Afol</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#LegoBuildingInstructions</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#LegoTechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#AndroidApp</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#PullBackBuggy</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#CartoonTruck</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#BulldozerBuild</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#FishingBoatLego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#MilitaryTruckModel</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#MohawkBuggy</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#STEMToys</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#LEGO</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Legotechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Customlego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Technicmoc</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legomoc</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Customtechnic</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legocreation</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Technicbricks</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Bricks</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Afol</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legobuilder</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Moc</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legobuild</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Technicwheels</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legomotors</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Pneumatics</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legopneumatics</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Custommoc</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legodesign</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Brickcentral</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legofan</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Techniclife</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legogear</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Powerfunctions</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Controlplus</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Legopower</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Technictruck</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Legocars</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Custombuild</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Brickbuilder</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legocommunity</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Technicworld</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legogeek</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Afols</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legoproject</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Mechanicallego</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legoparts</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Technicparts</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Creativelego</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Legomodel</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Brickstagram</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Legomania</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Technicgram</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Advancedlego</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legopowerplus</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Custombrick</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legoset</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Technicmocder</a>
+				<a class="tag" href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">#Legohobby</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">#Brickengineering</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Puzzle</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Logic</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Brain</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Sliding</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Tiles</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Grid</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Numbers</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Digits</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Sequence</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Arrange</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#NLP</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Solve</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Complete</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Challenge</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Interactive</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Mobile</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Game</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Android</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#App</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Application</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Smartphone</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Tablet</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Mental</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Exercise</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Training</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Strategy</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Tactics</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Planning</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Critical</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Thinking</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Concentration</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#AgenticAI</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Reasoning</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#IQ</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Engagement</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Entertainment</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Fun</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Addictive</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Satisfying</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Puzzle-solving</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#ArtificialIntelligence</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#GenerativeAI </a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Logic-based</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Strategy-based</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#AI</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#LLM</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#NeuralNetworks</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Success</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Learn</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#RAG</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Practice</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#User-friendly</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Music</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Difficulty</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Advanced</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Basic</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Pro</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Free</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MultiplicationTable</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MathPractice</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#LearnMath</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MathSkills</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Multiplication</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathTime</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#SchoolMath</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathFun</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#StudyMath</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathHelp</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#ElementaryMath</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathEducation</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MathMaster</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathClass</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#NumberSense</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathGoals</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MathLife</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathJourney</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#QuickMath</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathMemory</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MathIsFun</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathChallenge</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MathSuccess</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathLearning</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#MathTeacher</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#MathStudent</a>
+				<a class="tag" href="https://sachsensoft.github.io" target="_blank">#Sachsensoft</a>
+				<a class="tag" href="https://sachsensoft.gitlab.io" target="_blank">#Download</a>
+			</div>
+		</section>
+
+		<section id="important-links">
+			<h2 class="section-title">Important links</h2>
+			<div class="links">
+				<a href="https://www.matthiasreim.de" target="_blank">Matthias Reim (the best music for building Lego)</a>
+				<a href="https://www.lego.com" target="_blank">LEGO Official Website</a>
+				<a href="https://www.lego.com/en-us/service/buildinginstructions" target="_blank">LEGO Building Instructions Portal</a>
+				<a href="https://youtu.be/tWbmhJG_FdI?si=Jy1vcuGCp9HiFniG" target="_blank">LEGO Building Instructions App Videos</a>
+				<a href="https://sachsensoft.github.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">Lego Building Instructions App site</a>
+				<a href="https://sachsensoft.gitlab.io/best.free.lego.building.instructions.android.app/index.html" target="_blank">Lego Building Instructions App site</a>
+				<a href="https://sachsensoft.github.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">Lego Technic Building Instructions App site</a>
+				<a href="https://sachsensoft.gitlab.io/best.free.lego.technic.building.instructions.android.app/index.html" target="_blank">Lego Technic Building Instructions App site</a>
+			</div>
+		</section>
+
+		<section id="sustainability">
+			<h2 class="section-title">Sustainability, Impact and Responsibility</h2>
+			<p>
+            I believe that responsible business growth must go hand in hand with care for people, communities and the natural world. Sustainability is not a separate initiative for me; it is part of how I make decisions, design solutions and build long-term value. I am committed to reducing my environmental impact through smarter use of resources, lower waste, energy-efficient operations and responsible sourcing across my value chain.
+            My responsibility extends beyond compliance. I aim to understand the real impact of my activities and take practical action where I can make a measurable difference. This includes supporting circular economy principles, choosing materials and partners carefully, improving efficiency, and encouraging innovation that helps protect ecosystems and biodiversity.
+            Nature protection is central to my vision of sustainable progress. Healthy forests, clean water, resilient habitats and thriving species are essential to the wellbeing of future generations. That is why I continuously look for ways to prevent pollution, reduce emissions and support practices that preserve natural resources.
+            I know that trust is earned through transparency and consistent action. By setting meaningful goals, monitoring my progress and working with employees, customers and partners, I strive to create a positive impact today while helping build a more sustainable tomorrow.
+            </p>
+		</section>
+
+		<section id="responsible-ai">
+			<h2 class="section-title">Responsible Use of AI Technologies</h2>
+			<p>
+            I use AI technologies with a clear sense of responsibility, ensuring that innovation supports people, protects privacy and contributes to sustainable progress. AI can help improve efficiency, reduce repetitive work and support better decisions, but it must be applied with transparency, fairness and appropriate human oversight. I believe that technology should enhance human judgment rather than replace accountability.
+            In practice, this means using data carefully, respecting confidentiality, checking outputs for accuracy and bias, and choosing AI solutions that are secure, reliable and proportionate to the task. I also recognize that digital technologies have an environmental footprint, so I aim to use AI thoughtfully and efficiently, focusing on real value rather than unnecessary complexity. By combining innovation with ethics, safety and sustainability, I seek to make AI a positive force for business, society and the natural environment.
+			</p>
+		</section>
+
+		<section id="cybersecurity">
+			<h2 class="section-title">Cybersecurity and Data Protection</h2>
+			<p>
+            I treat cybersecurity and data protection as essential foundations of trust. In every digital activity, I aim to protect information from unauthorized access, misuse, loss or disruption. This means handling personal, business and technical data with care, using secure systems, limiting access to what is necessary, and respecting privacy throughout the full data lifecycle.
+            My approach is based on prevention, awareness and continuous improvement. I support strong authentication, appropriate encryption, regular updates, responsible data retention and clear procedures for identifying and responding to security risks. I also recognize that effective protection is not only a technical matter; it depends on responsible behaviour, accurate information handling and a culture of vigilance.
+            By protecting data and strengthening digital resilience, I help safeguard customers, partners, employees and the wider organization. I am committed to using technology in a way that supports confidentiality, integrity, availability and compliance, while maintaining confidence in the services and relationships that matter most.
+			</p>
+		</section>
+		
+		<section id="disclaimer">
+			<h2 class="section-title">Disclaimer</h2>
+			<p class="section-subtitle">LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site.
+			<br>Notice: This web site utilize AI-generated content, which could occasionally contain AI hallucinations.</p>
+		</section>
+
+		<section id="contacts">
+			<h2 class="section-title">Contacts</h2>
+			<div class="contacts">
+				<article class="contact-card">
+					<h3>Website</h3>
+					<p><a href="https://sachsensoft.github.io" target="_blank">https://sachsensoft.github.io</a></p>
+					<p><a href="https://sachsensoft.gitlab.io" target="_blank">https://sachsensoft.gitlab.io</a></p>
+				</article>
+				<article class="contact-card">
+					<h3>YouTube Channel</h3>
+					<p><a href="https://www.youtube.com/@sachsensoft" target="_blank">https://www.youtube.com/@sachsensoft</a></p>
+				</article>
+				<article class="contact-card">
+					<h3>WordPress</h3>
+					<p><a href="https://sachsensoft.wordpress.com" target="_blank">https://sachsensoft.wordpress.com</a></p>
+				</article>
+			</div>
+		</section>
+
+		<footer>
+			· Technic Building Instructions · MOC Technic Building Instructions · 15 Photo Puzzle Game · Multiplication Table · © Max Sanna · All rights reserved · <span id="year"></span> ·
+		</footer>
+	</main>
+
+	<script>
+		document.getElementById("year").textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>

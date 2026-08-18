@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Max Sanna Artificial Intelligence Technologies Overview</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+	<style>
+		:root {
+			--bg: #080d08;
+			--paper: #0c150c;
+			--ink: #00ff41;
+			--muted: #4db84d;
+			--accent-blue: #00cc33;
+			--accent-yellow: #00ff88;
+			--accent-navy: #0a1f0a;
+			--line: #1a6b1a;
+			--card-shadow: 0 14px 32px rgba(0, 255, 65, 0.12);
+			--radius-lg: 20px;
+			--radius-md: 14px;
+			--max-width: 1240px;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: "Manrope", "Segoe UI", sans-serif;
+			color: var(--ink);
+			background:
+				repeating-linear-gradient(
+					0deg,
+					transparent,
+					transparent 2px,
+					rgba(0, 255, 65, 0.015) 2px,
+					rgba(0, 255, 65, 0.015) 4px
+				),
+				linear-gradient(165deg, #080d08 0%, #0a120a 45%, #0c150c 100%);
+			line-height: 1.6;
+		}
+
+		.bg-shape {
+			position: fixed;
+			z-index: -1;
+			opacity: 0.45;
+			--tilt: 0deg;
+			transform: rotate(var(--tilt));
+			animation: drift 14s ease-in-out infinite;
+			pointer-events: none;
+		}
+
+		.sq-net {
+			width: 90px;
+			height: 90px;
+			border: 1.5px solid rgba(0, 255, 65, 0.8);
+			background:
+				repeating-linear-gradient(
+					0deg,
+					transparent,
+					transparent 14px,
+					rgba(0, 255, 65, 0.2) 14px,
+					rgba(0, 255, 65, 0.2) 15px
+				),
+				repeating-linear-gradient(
+					90deg,
+					transparent,
+					transparent 14px,
+					rgba(0, 255, 65, 0.2) 14px,
+					rgba(0, 255, 65, 0.2) 15px
+				);
+			filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.5));
+		}
+
+		.sq-net-lg {
+			width: 140px;
+			height: 140px;
+		}
+
+		.sq-net-sm {
+			width: 60px;
+			height: 60px;
+		}
+
+		.shape-a { --tilt: 8deg; top: 12vh; left: 3vw; }
+		.shape-b { --tilt: -16deg; top: 52vh; right: -10px; animation-delay: -5s; }
+		.shape-c { --tilt: -6deg; bottom: 8vh; left: 9vw; animation-delay: -8s; }
+		.shape-d { --tilt: 24deg; top: 26vh; right: 16vw; animation-delay: -2.5s; }
+		.shape-e { --tilt: -28deg; bottom: 24vh; left: 30vw; animation-delay: -6.5s; }
+		.shape-f { --tilt: 10deg; top: 68vh; left: 64vw; animation-delay: -10s; }
+		.shape-g { --tilt: 20deg; top: 6vh; left: 46vw; animation-delay: -12s; }
+		.shape-h { --tilt: -11deg; top: 33vh; left: 22vw; animation-delay: -4s; }
+		.shape-i { --tilt: 27deg; top: 72vh; right: 11vw; animation-delay: -7.5s; }
+		.shape-j { --tilt: -19deg; top: 18vh; left: 58vw; animation-delay: -2s; }
+		.shape-k { --tilt: 35deg; bottom: 10vh; left: 40vw; animation-delay: -9s; }
+		.shape-l { --tilt: -8deg; top: 55vh; left: 78vw; animation-delay: -13s; }
+
+		@keyframes drift {
+			0%,
+			100% {
+				transform: translateY(0) rotate(var(--tilt));
+			}
+			50% {
+				transform: translateY(-10px) rotate(calc(var(--tilt) + 3deg));
+			}
+		}
+
+		@keyframes revealUp {
+			from {
+				opacity: 0;
+				transform: translateY(16px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.wrap {
+			max-width: var(--max-width);
+			margin: 0 auto;
+			padding: 18px;
+		}
+
+		header.hero {
+			background: linear-gradient(130deg, #0a1a0a 0%, #0d200d 100%);
+			color: #00ff41;
+			border: 2px solid #00cc33;
+			border-radius: var(--radius-lg);
+			box-shadow: 0 14px 32px rgba(0, 255, 65, 0.18), 0 0 40px rgba(0, 255, 65, 0.06) inset;
+			overflow: hidden;
+			position: relative;
+			margin-top: 10px;
+			animation: revealUp 0.8s ease-out;
+		}
+
+		header.hero::before {
+			content: "";
+			position: absolute;
+			inset: auto auto -40px -40px;
+			width: 260px;
+			height: 260px;
+			background: radial-gradient(circle, rgba(0, 255, 65, 0.08), rgba(0, 255, 65, 0));
+			pointer-events: none;
+		}
+
+		.hero-grid {
+			display: grid;
+			grid-template-columns: 1.2fr 1fr;
+			gap: 22px;
+			padding: 34px;
+		}
+
+		.app-title {
+			font-family: "Bebas Neue", "Courier New", monospace;
+			letter-spacing: 1.5px;
+			font-size: clamp(2.5rem, 6vw, 4.6rem);
+			margin: 0;
+			line-height: 0.95;
+			text-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
+		}
+
+		.hero p {
+			margin: 14px 0 0;
+			max-width: 62ch;
+			color: rgba(0, 255, 65, 0.85);
+			font-size: 1.04rem;
+		}
+
+		.pill-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-top: 18px;
+		}
+
+		.pill {
+			background: rgba(0, 255, 65, 0.1);
+			border: 1px solid rgba(0, 255, 65, 0.5);
+			color: #00ff41;
+			border-radius: 999px;
+			padding: 6px 12px;
+			font-size: 0.85rem;
+			font-weight: 700;
+			letter-spacing: 0.3px;
+		}
+
+		.hero-stats {
+			background: rgba(0, 255, 65, 0.05);
+			border: 1px solid rgba(0, 255, 65, 0.3);
+			border-radius: var(--radius-md);
+			padding: 14px;
+			align-self: start;
+			backdrop-filter: blur(4px);
+		}
+
+		.hero-stats h2 {
+			margin: 0 0 8px;
+			font-family: "Bebas Neue", "Courier New", monospace;
+			font-size: 1.6rem;
+			letter-spacing: 0.9px;
+			color: #00ff88;
+		}
+
+		.hero-stats ul {
+			margin: 0;
+			padding-left: 18px;
+		}
+
+		.hero-stats li {
+			margin: 4px 0;
+			color: rgba(0, 255, 65, 0.85);
+		}
+
+		section {
+			margin-top: 28px;
+			background: var(--paper);
+			border: 1.5px solid var(--line);
+			border-radius: var(--radius-lg);
+			box-shadow: var(--card-shadow);
+			padding: 24px;
+			animation: revealUp 0.8s ease both;
+			color: var(--ink);
+		}
+
+		section:nth-of-type(1) { animation-delay: 0.05s; }
+		section:nth-of-type(2) { animation-delay: 0.1s; }
+		section:nth-of-type(3) { animation-delay: 0.15s; }
+		section:nth-of-type(4) { animation-delay: 0.2s; }
+		section:nth-of-type(5) { animation-delay: 0.25s; }
+		section:nth-of-type(6) { animation-delay: 0.3s; }
+		section:nth-of-type(7) { animation-delay: 0.35s; }
+		section:nth-of-type(8) { animation-delay: 0.4s; }
+
+		.section-title {
+			margin: 0 0 14px;
+			font-family: "Bebas Neue", "Courier New", monospace;
+			letter-spacing: 1.2px;
+			font-size: clamp(2rem, 4.5vw, 3.1rem);
+			line-height: 1;
+			text-shadow: 0 0 14px rgba(0, 255, 65, 0.4);
+		}
+
+		.section-subtitle {
+			margin: 0 0 18px;
+			color: #4db84d;
+			font-weight: 500;
+			font-size: 1rem;
+		}
+
+		.app-nav {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			margin-top: 28px;
+			justify-content: center;
+		}
+
+		.app-nav a {
+			display: inline-block;
+			padding: 10px 20px;
+			border-radius: 999px;
+			background: #0c150c;
+			border: 1.5px solid #1a6b1a;
+			color: #00cc33;
+			font-family: "Manrope", sans-serif;
+			font-weight: 700;
+			font-size: 0.92rem;
+			letter-spacing: 0.3px;
+			text-decoration: none;
+			transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+			white-space: nowrap;
+		}
+
+		.app-nav a:hover,
+		.app-nav a.active {
+			background: #00ff41;
+			color: #080d08;
+			border-color: #00ff41;
+			box-shadow: 0 0 12px rgba(0, 255, 65, 0.5);
+		}
+
+		.info-grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 12px;
+			margin-top: 14px;
+		}
+
+		.info-card {
+			border: 1px dashed #1a6b1a;
+			background: linear-gradient(135deg, #0a1f0a 0%, #112811 100%);
+			border-radius: 6px;
+			padding: 12px;
+		}
+
+		.info-card h3 {
+			margin: 0 0 4px;
+			font-size: 1.04rem;
+			color: #00ff88;
+		}
+
+		.info-card p {
+			margin: 0;
+			color: #4db84d;
+			font-size: 0.93rem;
+		}
+
+		.models {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 12px;
+		}
+
+		.model-card {
+			background: linear-gradient(135deg, #0a1f0a 0%, #112811 100%);
+			border: 1.5px solid #1a6b1a;
+			border-radius: 6px;
+			padding: 14px;
+		}
+
+		.model-card h3 {
+			margin: 0 0 6px;
+			font-size: 1.06rem;
+			color: #00ff88;
+		}
+
+		.model-card p {
+			margin: 0;
+			font-size: 0.94rem;
+			color: #4db84d;
+		}
+
+		.ai-art-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 16px;
+		}
+
+		.ai-art-card {
+			border: 1.5px solid #1a6b1a;
+			border-radius: 6px;
+			overflow: hidden;
+			background: linear-gradient(135deg, #0a1f0a 0%, #112811 100%);
+			box-shadow: 0 10px 20px rgba(0, 255, 65, 0.1);
+		}
+
+		.ai-art-preview {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			overflow: hidden;
+		}
+
+		.ai-art-preview img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: contain;
+			background: #080d08;
+		}
+
+		.art-1 {
+			background-image:
+				repeating-linear-gradient(0deg, transparent, transparent 9px, rgba(0,255,65,0.12) 9px, rgba(0,255,65,0.12) 10px),
+				repeating-linear-gradient(90deg, transparent, transparent 9px, rgba(0,255,65,0.12) 9px, rgba(0,255,65,0.12) 10px),
+				linear-gradient(135deg, #061006 0%, #0d2b0d 50%, #061406 100%);
+		}
+
+		.art-2 {
+			background-image:
+				repeating-linear-gradient(45deg, transparent, transparent 14px, rgba(0,255,65,0.1) 14px, rgba(0,255,65,0.1) 15px),
+				repeating-linear-gradient(-45deg, transparent, transparent 14px, rgba(0,255,65,0.1) 14px, rgba(0,255,65,0.1) 15px),
+				linear-gradient(135deg, #071407 0%, #0f300f 55%, #071007 100%);
+		}
+
+		.art-3 {
+			background-image:
+				repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(0,204,51,0.15) 19px, rgba(0,204,51,0.15) 20px),
+				repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(0,204,51,0.15) 19px, rgba(0,204,51,0.15) 20px),
+				linear-gradient(135deg, #081808 0%, #0c280c 50%, #061806 100%);
+		}
+
+		.art-4 {
+			background-image:
+				radial-gradient(circle at 30% 40%, rgba(0,255,65,0.18) 0%, transparent 50%),
+				repeating-linear-gradient(0deg, transparent, transparent 9px, rgba(0,255,65,0.1) 9px, rgba(0,255,65,0.1) 10px),
+				repeating-linear-gradient(90deg, transparent, transparent 9px, rgba(0,255,65,0.1) 9px, rgba(0,255,65,0.1) 10px),
+				linear-gradient(145deg, #071407 0%, #0e2a0e 50%, #061006 100%);
+		}
+
+		.art-5 {
+			background-image:
+				repeating-linear-gradient(60deg, transparent, transparent 14px, rgba(0,255,136,0.1) 14px, rgba(0,255,136,0.1) 15px),
+				repeating-linear-gradient(120deg, transparent, transparent 14px, rgba(0,255,136,0.1) 14px, rgba(0,255,136,0.1) 15px),
+				linear-gradient(135deg, #061206 0%, #0c250c 45%, #081808 100%);
+		}
+
+		.art-6 {
+			background-image:
+				repeating-linear-gradient(0deg, transparent, transparent 7px, rgba(0,255,65,0.18) 7px, rgba(0,255,65,0.18) 8px),
+				repeating-linear-gradient(90deg, transparent, transparent 7px, rgba(0,255,65,0.18) 7px, rgba(0,255,65,0.18) 8px),
+				linear-gradient(145deg, #071207 0%, #102010 55%, #081008 100%);
+		}
+
+		.ai-art-body {
+			padding: 10px 12px 12px;
+			text-align: center;
+		}
+
+		.ai-art-body h3 {
+			margin: 0;
+			font-size: 1rem;
+			color: #00ff88;
+		}
+
+		.ai-video-grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 12px;
+		}
+
+		.ai-video-card {
+			border: 1.5px solid #1a6b1a;
+			border-radius: 6px;
+			overflow: hidden;
+			background: linear-gradient(135deg, #0a1f0a 0%, #112811 100%);
+			box-shadow: 0 10px 20px rgba(0, 255, 65, 0.1);
+		}
+
+		.ai-video-frame {
+			position: relative;
+			width: 100%;
+			aspect-ratio: 9 / 16;
+			background: #000;
+		}
+
+		.ai-video-frame iframe {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+
+		.ai-video-body {
+			padding: 10px 12px 12px;
+			text-align: center;
+		}
+
+		.ai-video-body h3 {
+			margin: 0;
+			font-size: 1rem;
+			color: #00ff88;
+		}
+
+		.checklist {
+			margin: 0;
+			padding-left: 20px;
+		}
+
+		.checklist li {
+			margin-bottom: 8px;
+			color: rgba(0, 255, 65, 0.9);
+		}
+
+		.notice {
+			margin: 14px 0 0;
+			padding: 12px 14px;
+			border-left: 4px solid #00cc33;
+			background: #0a150a;
+			border-radius: 4px;
+			box-shadow: 0 8px 20px rgba(0, 255, 65, 0.1);
+			color: #4db84d;
+		}
+
+		.links {
+			display: grid;
+			gap: 8px;
+		}
+
+		.links a {
+			color: #00ff88;
+			font-weight: 700;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 3px;
+			word-break: break-word;
+		}
+
+		.links a:hover {
+			color: #00ff41;
+			text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+		}
+		
+		.cross-text a:link {
+			color:inherit
+		}
+		
+		.cross-text a:visited {
+			color:inherit
+		}
+
+		footer {
+			margin: 24px auto 10px;
+			text-align: center;
+			color: #4db84d;
+			font-size: 0.9rem;
+			font-weight: 600;
+			letter-spacing: 0.2px;
+		}
+
+		@media (max-width: 920px) {
+			.hero-grid,
+			.info-grid,
+			.ai-art-grid,
+			.ai-video-grid,
+			.models {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media (min-width: 921px) and (max-width: 1180px) {
+			.ai-video-grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+		}
+
+		@media (max-width: 560px) {
+			.wrap {
+				padding: 10px;
+			}
+
+			.shape-e,
+			.shape-g {
+				display: none;
+			}
+
+			section,
+			.hero-grid {
+				padding: 16px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="bg-shape sq-net shape-a"></div>
+	<div class="bg-shape sq-net sq-net-lg shape-b"></div>
+	<div class="bg-shape sq-net sq-net-sm shape-c"></div>
+	<div class="bg-shape sq-net shape-d"></div>
+	<div class="bg-shape sq-net sq-net-lg shape-e"></div>
+	<div class="bg-shape sq-net sq-net-sm shape-f"></div>
+	<div class="bg-shape sq-net shape-g"></div>
+	<div class="bg-shape sq-net sq-net-lg shape-h"></div>
+	<div class="bg-shape sq-net shape-i"></div>
+	<div class="bg-shape sq-net sq-net-sm shape-j"></div>
+	<div class="bg-shape sq-net shape-k"></div>
+	<div class="bg-shape sq-net sq-net-lg shape-l"></div>
+
+	<main class="wrap">
+		<header class="hero">
+			<div class="hero-grid">
+				<div>
+					<h1 class="app-title">Max Sanna<br> AI Technologies</h1>
+					<p>
+						A practical overview of Max Sanna artificial intelligence: what it is, where it helps, which models are often recommended,
+						and how to use AI responsibly, fairly, and without bias in real projects.
+					</p>
+					<div class="pill-list" aria-label="AI page highlights">
+						<span class="pill">Artificial intelligence</span>
+						<span class="pill">Recommended Models</span>
+						<span class="pill">AI Art</span>
+						<span class="pill">Responsible AI</span>
+					</div>
+				</div>
+				<aside class="hero-stats" aria-label="quick AI facts">
+					<h2>Max Sanna AI Models Quick Facts</h2>
+					<ul>
+						<li>Favoriite LLM Model Family: Qwen</li>
+						<li>Favorite Image Generation Model: SD XL</li>
+						<li>Favoritte Audio Model: MMAudio and UVR models</li>
+						<li>Other favoritte models: Flux and Qwen Image Edit</li>
+						<li>Favorite AI Tools: ComfyUI, Ollama and SillyTavern</li>
+					</ul>
+				</aside>
+			</div>
+		</header>
+
+		<nav class="app-nav" aria-label="AI navigation">
+			<a class="active" href="#general">General Information</a>
+			<a href="#models">Recommended Models</a>
+			<a href="#art">AI Art</a>
+			<a href="#responsible">Responsible Use</a>
+			<a href="#limitations">Limitations</a>
+			<a href="#privacy">Privacy</a>
+			<a href="#compliance">Compliance</a>
+			<a href="#resources">Links</a>
+		</nav>
+
+		<section id="general">
+			<h2 class="section-title">General Information About Max Sanna AI Technologies</h2>
+			<p class="section-subtitle">
+				Artificial intelligence is a broad field focused on building systems that can perform tasks normally requiring human intelligence. Max Sanna uses AI for various use cases, including buyt not limiting:
+			</p>
+			<div class="info-grid">
+				<article class="info-card">
+					<h3>Augmented Development</h3>
+					<p>A practice where human programmers use artificial intelligence tools as co-workers to write, test, and fix code.</p>
+				</article>
+				<article class="info-card">
+					<h3>Natural Language Processing</h3>
+					<p>Language models are used to summarize, explain, draft, translate, and answer questions.</p>
+				</article>
+				<article class="info-card">
+					<h3>Image Generative AI</h3>
+					<p> Text-to-image models are used to generate and edit images.</p>
+				</article>
+				<article class="info-card">
+					<h3>Sound and Speech AI</h3>
+					<p>Audio models are used to generate speech and perfrom various actions on music.</p>
+				</article>
+				<article class="info-card">
+					<h3>Video Generative AI</h3>
+					<p>Text-to-video models are used to generate video content.</p>
+				</article>
+				<article class="info-card">
+					<h3>Computer Vision</h3>
+					<p>Vision models understand images, detect objects, and classify visual patterns.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="models">
+			<h2 class="section-title">Max Sanna Recommended AI Models</h2>
+			<p class="section-subtitle">
+				Max Sanna uses open source open weight models as most secure from privacy point of view and fair bias controllable ones.
+			</p>
+			<div class="models">
+				<article class="model-card">
+					<h3>General LLM: Qwen, DeepSeek, Llama Family Models</h3>
+					<p>Strong all-purpose reasoning, summarization, instruction following, and mixed-content workflows.</p>
+				</article>
+				<article class="model-card">
+					<h3>Agentic Coding: Local Qwen Coder Family Models</h3>
+					<p>Useful for code generation, refactoring, test writing, and architecture explanation.</p>
+				</article>
+				<article class="model-card">
+					<h3>AI Image Generation: SDXL, Qwen Image, Flux Family Models</h3>
+					<p>Good for concept art, product mockups, and visual ideation with prompt iteration.</p>
+				</article>
+				<article class="model-card">
+					<h3>AI Video Generation: WAN Family Models</h3>
+					<p>Good for short concept video generation.</p>
+				</article>
+				<article class="model-card">
+					<h3>AI Sound and Speech: MMAudio and UVR Models</h3>
+					<p>Speech generation, music vocal remover and other audio manipulations.</p>
+				</article>
+				<article class="model-card">
+				<h3>CLIP, VAE, Text Encoders, Embeddings, etc.</h3>
+					<p>Auxiliary models enabling semantic retrieval, text-to-image context-awarness, etc.</p>
+				</article>
+			</div>
+			<br>Qwen Family: Qwen3.8 27B; Qwen3.6 27B, 35B-A3B MoE; Qwen3.5 0.8B, 2B, 4B, 9B, 27B, 35B-A3B MoE
+<br>Qwen3 Coder: Qwen3 Coder-Next 80B-A3B MoE; Qwen3 Coder 30B-A3B
+<br> Qwen3-VL 2B-Instruct/Thinking, 4B-Instruct/Thinking, 8B-Instruct/Thinking, 30B-A3B-Instruct/Thinking
+<br>DeepSeek-R1, R1-0528-Qwen3-8B, Distill Llama 3 8B, Distill Qwen 2.5 1.5B, Distill Qwen 2.5 7B, Distill Qwen 2.5 14B, Distill Qwen 2.5 32B
+<br>Nomic Embed Text V2 475M-A305M (nomic-embed-text-v2-moe) open-source, multilingual text embedding model (by Nomic AI).
+<br>CLIP-L (Contrastive Language-Image Pre-training - Large), CLIP ViT-L/14 vision-language text encoder model (by OpenAI)
+<br>OpenCLIP ViT-bigG/14 open-source CLIP model (by the LAION community) 
+<br>FLUX.1 [dev] 12B open-weight text-to-image model (by Black Forest Labs)
+<br>FLUX.1 Krea [dev] 12B open-weights text-to-image model (by Black Forest Labs and Krea AI)
+<br>FLUX.1 Kontext [dev] 12B open-weight model (by Black Forest Labs)
+<br>Z-Image-Turbo 6B open-sourcetext-to-image model (by Alibaba’s Tongyi-MAI team)
+<br>Wan2.2-TI2V-5B, Wan2.2-T2V-A14B, Wan2.2-I2V-A14B open-source MoE video generation models (by Alibaba)
+<br>Qwen-Image-2512	(by Qwen team [Tongyi Qianwen team])
+<br>Qwen-Image-Edit-2511 (by Qwen team [Tongyi Qianwen team])
+<br>Stable Diffusion XL (SDXL) open-source text-to-image generation model (by Stability AI)
+<br> - Base, DreamShaperXL, JuggernautXL, animaPencilXL, etc.
+<br>Variational Autoencoders (VAE) (by Stability AI and Black Forest Labs)
+<br>MMAudio open-source model (by Sony AI and the University of Illinois)
+<br>T5-XXL text encoder models (by Google Research)
+		</section>
+
+		<section id="art">
+			<h2 class="section-title">Max Sanna AI Generative Art</h2>
+			<p class="section-subtitle">
+				Some examples of Max Sanna Generative AI usage.
+			</p>
+			<div class="ai-art-grid">
+				<article class="ai-art-card">
+					<div class="ai-art-preview">
+						<img src="max.sanna.generative.artificial.intelligence.art/max.sanna.generative.artificial.intelligence.art.image.1.jpg" alt="AI art example: Product 1 concept visual" />
+					</div>
+					<div class="ai-art-body">
+						<h3>On the Edge of Hallucination</h3>
+					</div>
+				</article>
+				<article class="ai-art-card">
+					<div class="ai-art-preview">
+						<img src="max.sanna.generative.artificial.intelligence.art/max.sanna.generative.artificial.intelligence.art.image.2.jpg" alt="AI art example: Product 2 concept visual" />
+					</div>
+					<div class="ai-art-body">
+						<h3>The Hole</h3>
+					</div>
+				</article>
+				<article class="ai-art-card">
+					<div class="ai-art-preview">
+						<img src="max.sanna.generative.artificial.intelligence.art/max.sanna.generative.artificial.intelligence.art.image.3.jpg" alt="AI art example: Product 3 concept visual" />
+					</div>
+					<div class="ai-art-body">
+						<h3>Feather Waves</h3>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="short-videos">
+			<h2 class="section-title">Max Sanna AI Generative Short Videos</h2>
+			<p class="section-subtitle">
+				Some examples of Max Sanna Generative AI usage.
+			</p>
+			<div class="ai-video-grid">
+				<article class="ai-video-card">
+					<div class="ai-video-frame">
+						<iframe
+							src="https://www.youtube.com/embed/lBLSierUyyc"
+							title="AI Short Video Example 1"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							loading="lazy"
+						></iframe>
+					</div>
+					<div class="ai-video-body">
+						<h3>AI Short #1: Painted Tiger</h3>
+					</div>
+				</article>
+
+				<article class="ai-video-card">
+					<div class="ai-video-frame">
+						<iframe
+							src="https://www.youtube.com/embed/6HNlxr6X_bE"
+							title="AI Short Video Example 2"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							loading="lazy"
+						></iframe>
+					</div>
+					<div class="ai-video-body">
+						<h3>AI Short #2: Splashes</h3>
+					</div>
+				</article>
+
+				<article class="ai-video-card">
+					<div class="ai-video-frame">
+						<iframe
+							src="https://www.youtube.com/embed/aziwBIc3L78"
+							title="AI Short Video Example 3"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							loading="lazy"
+						></iframe>
+					</div>
+					<div class="ai-video-body">
+						<h3>AI Short #3: Out of the picture</h3>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="responsible">
+			<h2 class="section-title">Artificial Intelligence Fair, Unbiased, Responsible Use</h2>
+			<p class="section-subtitle">
+				Responsible AI means reducing harm, improving transparency, and preserving human dignity in outcomes.
+			</p>
+			<p>Max Sanna uses AI technologies with a clear sense of responsibility, ensuring that innovation supports people, protects privacy and contributes to sustainable progress.
+			AI can help improve efficiency, reduce repetitive work and support better decisions, but it must be applied with transparency, fairness and appropriate human oversight.
+			Max Sanna believes that technology should enhance human judgment rather than replace accountability. In practice, this means using data carefully, respecting confidentiality, checking outputs for accuracy and bias, and choosing AI solutions that are secure, reliable and proportionate to the task.
+			Max Sanna also recognizes that digital technologies have an environmental footprint, so Max Sanna aims to use AI thoughtfully and efficiently, focusing on real value rather than unnecessary complexity.
+			By combining innovation with ethics, safety and sustainability, Max Sanna seeks to make AI a positive force for business, society and the natural environment.
+			</p>
+			<p>Fair, Unbiased, Responsible AI Use Checklist:</p>
+			<ol class="checklist">
+				<li>Test for bias across different user groups and languages before production release.</li>
+				<li>Do not use AI outputs as final truth without domain review and fact verification.</li>
+				<li>Explain where AI is used and label generated content when appropriate.</li>
+				<li>Collect only necessary data and avoid using sensitive data without explicit legal basis.</li>
+				<li>Build escalation paths so users can challenge automated decisions.</li>
+				<li>Continuously monitor quality drift, safety issues, and misuse patterns.</li>
+			</ol>
+		</section>
+
+		<section id="limitations">
+			<h2 class="section-title">Common Artificial Intelligence Limitations and Risks</h2>
+			<p class="section-subtitle">
+				AI can be powerful, but it can also produce plausible errors or incomplete reasoning.
+			</p>
+			<div class="info-grid">
+				<article class="info-card">
+					<h3>Hallucinations</h3>
+					<p>Models may confidently generate incorrect facts, references, or calculations.</p>
+				</article>
+				<article class="info-card">
+					<h3>Bias Propagation</h3>
+					<p>Training data imbalance can lead to unfair output behavior if not actively managed.</p>
+				</article>
+				<article class="info-card">
+					<h3>Prompt Sensitivity</h3>
+					<p>Small wording changes can produce major output differences and inconsistency.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="privacy">
+			<h2 class="section-title">Artificial Intelligence Privacy and Security</h2>
+			<p class="section-subtitle">
+				Treat AI inputs and outputs with the same care as any other sensitive business data.
+			</p>
+			<ol class="checklist">
+				<li>Mask or remove personal identifiers before sending prompts to external systems.</li>
+				<li>Prefer regional hosting and enterprise controls for regulated workflows.</li>
+				<li>Store logs with retention limits and access controls.</li>
+				<li>Run red-team style tests for prompt injection and data leakage scenarios.</li>
+			</ol>
+		</section>
+
+		<section id="compliance">
+			<h2 class="section-title">AI Compliance: European, International, and USA Acts</h2>
+			<p class="section-subtitle">
+				Max Sanna tries to stick to Artificial Intelligence compliance requirements differ by jurisdiction and use case. The acts below are commonly referenced in governance programs.
+			</p>
+			<div class="info-grid">
+				<article class="info-card">
+					<h3>European Union</h3>
+					<p><strong>AI Act:</strong> Regulation (EU) 2024/1689 (risk-based AI rules across the EU).</p>
+					<p><strong>GDPR:</strong> Regulation (EU) 2016/679 (personal data protection and automated decision safeguards).</p>
+					<p><strong>Digital Services Act:</strong> Regulation (EU) 2022/2065 (platform transparency and risk obligations).</p>
+					<p><strong>Data Act:</strong> Regulation (EU) 2023/2854 (data access and sharing obligations relevant to AI ecosystems).</p>
+				</article>
+				<article class="info-card">
+					<h3>International Frameworks</h3>
+					<p><strong>Council of Europe Framework Convention on AI (2024):</strong> treaty framework on AI, human rights, democracy, and rule of law.</p>
+					<p><strong>UNESCO Recommendation on the Ethics of AI (2021):</strong> global ethical governance guidance.</p>
+					<p><strong>OECD AI Principles (2019):</strong> internationally used principles for trustworthy AI policy.</p>
+					<p><strong>ISO/IEC 42001:2023:</strong> AI management system standard used in compliance and audit programs.</p>
+				</article>
+				<article class="info-card">
+					<h3>United States</h3>
+					<p><strong>Colorado AI Act (SB24-205):</strong> state-level duties for high-risk AI developers and deployers.</p>
+					<p><strong>NYC Local Law 144:</strong> requirements for bias audits of automated employment decision tools.</p>
+					<p><strong>FTC Act Section 5:</strong> enforcement against unfair or deceptive AI-related practices.</p>
+					<p><strong>CCPA/CPRA (California):</strong> consumer privacy rights affecting AI data processing and profiling.</p>
+					<p><strong>Illinois BIPA:</strong> biometric data obligations that can affect AI vision and identity systems.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="resources">
+			<h2 class="section-title">Useful Artificial Intelligence Links</h2>
+			<p class="section-subtitle">
+				Here is a list of some useful Artificial Intelligence links.
+			</p>
+			<div class="links">
+				<a href="https://qwen.ai/home" target="_blank">Qwen</a>
+				<a href="https://github.com/comfy-org/comfyui" target="_blank">ComfyUI</a>
+				<a href="https://ultimatevocalremover.com" target="_blank">Ultimate Vocal Remover</a>
+				<a href="https://ollama.com" target="_blank">Ollama</a>
+				<a href="https://huggingface.co/unsloth" target="_blank">Hugging Face</a>
+				<a href="https://sachsensoft.github.io/max.sanna.artificial.intelligence.agentic.ai.expert/index.html" target="_blank">Max Sanna Artificial Intelligence Technologies Overview</a>
+				<a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank">NIST AI Risk Management Framework</a>
+				<a href="https://sachsensoft.gitlab.io/max.sanna.artificial.intelligence.agentic.ai.expert/index.html" target="_blank">Max Sanna Artificial Intelligence Technologies Overview</a>
+			</div>
+		</section>
+				
+		<section id="disclaimer">
+			<h2 class="section-title">Disclaimer</h2>
+			<p class="section-subtitle">Notice: This web site utilize AI-generated content, which could occasionally contain AI hallucinations.</p>
+		</section>
+
+		<section id="contacts">
+			<h2 class="section-title">Contacts</h2>
+			<div class="info-grid">			
+				<article class="info-card">
+					<h3>Website</h3>
+					<div class="cross-text">
+					<p><a href="https://sachsensoft.github.io" target="_blank">https://sachsensoft.github.io</a></p>
+					<p><a href="https://sachsensoft.gitlab.io" target="_blank">https://sachsensoft.gitlab.io</a></p>
+					</div>
+				</article>
+				<article class="info-card">
+					<div class="cross-text">
+					<h3>YouTube Channel</h3>
+					<p><a href="https://www.youtube.com/@sachsensoft" target="_blank">https://www.youtube.com/@sachsensoft</a></p>
+					</div>
+				</article>
+				<article class="info-card">
+					<div class="cross-text">
+					<h3>WordPress</h3>
+					<p><a href="https://sachsensoft.wordpress.com" target="_blank">https://sachsensoft.wordpress.com</a></p>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<footer>
+		· Max Sanna Artificial Intelligence Technologies Overview · © Max Sanna · All rights reserved · <span id="year"></span>
+		</footer>
+	</main>
+
+	<script>
+		document.getElementById("year").textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>

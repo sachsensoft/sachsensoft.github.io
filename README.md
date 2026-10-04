@@ -9,6 +9,14 @@
 The mobile application for Lego Technic building instructions stands out as a transformative tool for enthusiasts and beginners alike. Its simple and clear user interface ensures that users of all skill levels can navigate the app with ease, making the building process intuitive and enjoyable. The incredible performance of the app further enhances the experience, ensuring smooth transitions between steps and rapid loading times, which keeps the building momentum alive without unnecessary interruptions.
 What truly sets this application apart is its detailed step-by-step building instructions. Each model is meticulously documented, guiding users through every brick placement with precision. This attention to detail minimizes errors and boosts confidence, allowing builders to focus on the joy of construction rather than frustration. Whether you are a seasoned builder or a first-time enthusiast, the clarity of the instructions empowers you to tackle complex models with ease.
 The app features a stunning array of Lego Technic vehicle models, each designed to be both beautiful and fun to play with. From the dynamic Pull Back Buggy to the robust Cartoon Truck, every model offers a unique building challenge and play value. The Technic Bulldozer provides a realistic engineering experience, while the Military Truck delivers an adventurous spirit perfect for role-play scenarios. For water enthusiasts, the Fishing Boat offers a serene yet engaging build, and the Mohawk Buggy stands out with its rugged design and high-performance capabilities. Each model is crafted to inspire creativity and provide hours of entertainment once completed.
+
+ - [Technic Pull-Back Buggy](https://www.youtube.com/watch?v=20T3YVKw6vk) — Compact, fast, and built for action, this rugged buggy stores energy in its pull-back mechanism before launching across the floor.
+ - [Technic Cartoon Truck](https://www.youtube.com/watch?v=5wiPjV-sXS4) — A playful truck with wheels, expressive bodywork, and exaggerated proportions that look ready to roll out of an animated series. Beneath its humorous appearance, authentic steering and moving mechanical details provide a satisfying Technic building experience.
+ - [Technic Bulldozer](https://www.youtube.com/watch?v=dH0qG2v9OLI) — Take command of a powerful tracked machine created for the toughest building-site challenges. Its broad lifting blade, robust frame, and detailed mechanisms capture the strength and purposeful movement of a real bulldozer.
+ - [Technic Military Truck](https://www.youtube.com/watch?v=XKM0Q6O8AMc) — Designed as a fictional heavy-duty expedition vehicle, this imposing truck features a high-clearance chassis, rugged tyres, and a practical cargo body. Its disciplined styling and functional details make it ready for demanding rescue, transport, and exploration missions.
+ - [Technic Fishing Boat](https://www.youtube.com/watch?v=88uMTS1uJ3A) — Set out on an imaginative voyage with a working vessel inspired by professional fishing boats. A detailed wheelhouse, rotating deck equipment, and mechanical hauling features bring the busy atmosphere of life on the water to the building table.
+ - [Technic Mohawk Buggy](https://www.youtube.com/watch?v=db7zYAg7KIw) — This rebellious off-roader stands out with a sharp central fin, aggressive bodywork, exposed mechanical details, and wide tyres. Built to look fast even when parked, it combines punk-inspired attitude with the adventurous spirit of a high-performance desert buggy.
+
 This application not only simplifies the building process but also elevates the entire Lego Technic experience. By combining a user-friendly interface, exceptional performance, and comprehensive instructions, it bridges the gap between digital guidance and physical creativity. The inclusion of diverse and exciting models ensures that there is something for everyone, from casual builders to dedicated collectors. Ultimately, this app is more than just a set of instructions—it is a companion that enhances the joy of building and playing with Lego Technic vehicles, making every build session an adventure worth embarking on.
 In short, the app redefines the way we approach Lego Technic models, offering an unparalleled experience that is both educational and entertaining. With its commitment to quality and user satisfaction, it is undoubtedly a must-have for any Lego Technic enthusiast.
 
@@ -108,6 +116,7 @@ What truly sets this application apart is its focus on interactive learning. The
 This application not only simplifies the learning process but also elevates the entire math experience for young learners. By combining a user-friendly interface, engaging modes, and comprehensive testing options, it bridges the gap between digital education and academic success. The inclusion of diverse learning and testing modes ensures that there is something for every child, from beginners to advanced students. Ultimately, this app is more than just a tool—it is a companion that enhances the joy of learning math, making every study session an adventure worth embarking on.
 In short, the Multiplication Table app redefines the way kids approach mathematics, offering an unparalleled experience that is both educational and entertaining. With its commitment to quality and user satisfaction, it is undoubtedly a must-have for any parent or teacher looking to help children master their multiplication skills.
 
+
 ## Max Sanna One - One Single Catalog for all Max Sanna models and mosaics!
 
 - https://play.google.com/store/apps/details?id=max.sanna.one
@@ -116,3 +125,41 @@ The Ultimate Hub for Max Sanna Models Fans! The Max Sanna One Android App is an 
 This single application is truly the definitive catalog for all Max Sanna models and mosaics. It effortlessly bridges the gap between the Technic Building Instructions Android App, the MOC Technic Instructions Prime Android App, the 42102 Alternative Models Prime Android App, the 75892 Alternative Models Prime Android App, and the MOC Mosaic Instructions Prime Android App. Instead of switching between different interfaces, users enjoy a unified library that provides instant access to every corner of the Max Sanna universe.
 The user experience is nothing short of brilliant. Navigating through thousands of entries feels smooth and intuitive, making it incredibly easy to locate a specific model or mosaic with just a few taps. Whether one is searching for intricate Technic mechanics, exploring unique alternative builds, or admiring the artistic detail of MOC mosaics, the app delivers comprehensive information in a visually stunning format. It is the only app needed to find a model or mosaic from the entire Max Sanna family.
 This tool empowers creativity and efficiency. Builders can now reference instructions faster, ensuring that inspiration flows uninterrupted from concept to construction. It stands as a testament to the dedication of the Max Sanna team to support their passionate community. For anyone seeking a streamlined, all-encompassing digital resource, this app is the gold standard. It is a must-have download for anyone who loves the art and engineering of Max Sanna. Truly, it is the one single catalog that defines the future of digital instruction for this incredible brand.
+
+
+## Electronic Synth Music with Immersive Visualisation
+
+- https://www.youtube.com/watch?v=XHiQWvKKEgk
+- https://sachsensoft.github.io/max.sanna.best.live.synthesizer.music.mp3.player/index.html
+- https://sachsensoft.gitlab.io/max.sanna.best.live.synthesizer.music.mp3.player/index.html
+
+Embark on a deep-space journey with this analog synthesizer music visualization. This track uses rich, warm analog synths to craft a cosmic ambient soundscape.
+The music tells the hauntingly beautiful story of a pulsating star reaching the end of its life cycle. As you listen, watch the stunning visual progression of a dying star flickering out in the vastness of the cosmos.
+The synths swell and fracture to mirror the chaotic, final moments of this celestial giant. Collapsing gravitational fields shift perfectly in sync with the musical arrangement.
+Every pulse of the melody represents the final heartbeats of a fading stellar remnant. This immersive fusion of sound and space art captures both the scale and tragedy of cosmic evolution.
+Turn up the volume, dim the lights, and witness the spectacular death of a star. Be sure to like, subscribe, and drop a comment below sharing how this cosmic journey made you feel.
+For more Max Sanna synth music visit [Max Sanna Synthesizer Music Player](https://sachsensoft.github.io/max.sanna.best.live.synthesizer.music.mp3.player/index.html).
+
+
+## AI-Designed Concept Cars and AI-Generated Art Videos
+
+- https://www.youtube.com/watch?v=PNuyZ_2klYA
+- https://www.youtube.com/watch?v=IOtg1sTTdZo
+- https://www.youtube.com/watch?v=W6gS0_1jPjY
+
+Step into the future with imaginative AI-designed concept cars videos, showcasing bold shapes, innovative details, and inspiring visions of next-generation automotive design.
+Imagine sleek futuristic cars sculpted by aerodynamics, powerful trucks engineered for distant frontiers, and radical motorcycles that seem to flow through cities of tomorrow.
+Each AI-created concept explores daring proportions, intelligent technology, luminous details, and visionary forms - transforming familiar vehicles into inspiring machines built for speed, adventure, sustainability, and a future without creative limits.
+
+- https://www.youtube.com/watch?v=xLdhLIBnkjM
+- https://www.youtube.com/shorts/lBLSierUyyc
+- https://www.youtube.com/shorts/iIr-Lg1KzwI
+- https://www.youtube.com/shorts/aziwBIc3L78
+- https://www.youtube.com/shorts/gB9gw--G-0s
+- https://www.youtube.com/shorts/6HNlxr6X_bE
+
+Enjoy captivating AI-generated art videos that turn creative ideas into vivid visual experiences, blending technology with limitless imagination.
+Journey through scenes where imagination breaks every boundary: a fishing boat battles a colourful storm with enormous colourful waves; a racing car charges along a rain-soaked track as reflections, spray, and speed merge into cinematic motion; and a speedboat surges beyond the edge of the picture, transforming a still frame into an unforgettable illusion.
+Experience 36 AI-generated views of Mount Fuji, inspired by the celebrated original Thirty-six Views of Mount Fuji woodblock-print series created by Japanese artist Katsushika Hokusai around 1830–1832.
+Like Hokusai’s landmark series, which presented the mountain through different seasons, weather conditions, and viewpoints, this AI interpretation reimagines the iconic peak with dramatic skies, luminous colours, and dreamlike artistic styles.
+The video turns an impossible idea into a vivid moving artwork and invites viewers to see familiar subjects from an entirely new perspective.
